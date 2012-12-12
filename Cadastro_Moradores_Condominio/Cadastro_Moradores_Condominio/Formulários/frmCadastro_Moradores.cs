@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class Cadastro_Moradores : Form
+    public partial class frmCadastro_Moradores : Form
     {
-        public Cadastro_Moradores()
+        public frmCadastro_Moradores()
         {
             InitializeComponent();
         }
@@ -32,52 +32,30 @@ namespace Cadastro_Moradores_Condominio
         public string Cpf;
         public string Apartamento;
         public int IDRespn;
-        #endregion
 
         public ErrorProvider epErro;
+        #endregion
+
+
         private void Gravar(int pID, string pNome, string pPredio, string pBloco, string pEmail, string pRg, string pTelefoneResidencial, string pTelefoneComercial, string pCelular1, string pCelular2, string pCpf, string pApartamento, int pIDRespn)
         {
             try
             {
                 Morador objMorador = new Morador();
                 objMorador.Salvar(pID, pNome, pPredio, pBloco, pEmail, pRg, pTelefoneResidencial, pTelefoneComercial, pCelular1, pCelular2, pCpf, pApartamento, pIDRespn);
-
+                MessageBox.Show("Inserido com Sucesso!");
+                Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro!" + ex.Message);
                 throw;
             }
-            MessageBox.Show("Inserido com Sucesso!");
+
+
         }
 
-        private void btSalvar_Click(object sender, EventArgs e)
-        {
-            if (!String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtID.Text) && !String.IsNullOrEmpty(txtApartamento.Text))
-            {
-                string strSexo = string.Empty;
 
-                if (ID == 0)
-                {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
-                    Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbPredio.Text, cbBloco.Text, txtEmail.Text, txtIdentidade.Text, mbTelefoneResidencial.Text, mbTelefoneComercial.Text, mbCelular1.Text, mbCelular2.Text, mbCpf.Text, txtApartamento.Text, Convert.ToInt32(txtIDRespn.Text));
-                }
-                else
-                {
-                    Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbPredio.Text, cbBloco.Text, txtEmail.Text, txtIdentidade.Text, mbTelefoneResidencial.Text, mbTelefoneComercial.Text, mbCelular1.Text, mbCelular2.Text, mbCpf.Text, txtApartamento.Text, Convert.ToInt32(txtIDRespn.Text));
-                }
-            }
-            else
-            {
-                if (String.IsNullOrEmpty(txtID.Text))
-                {
-                    epErro.SetError(txtID, "Informe o Codigo");
-                }
-                if (String.IsNullOrEmpty(txtNome.Text))
-                {
-                    epErro.SetError(txtNome, "Informe o Nome");
-                }                
-            }
-        }
 
         //private void btExcluir_Click(object sender, EventArgs e)
         //{
@@ -109,26 +87,26 @@ namespace Cadastro_Moradores_Condominio
             }
         }
 
-        private void frmCadastroMorador_Load(object sender, EventArgs e)
+        private void frmCadastro_Moradores_Load(object sender, EventArgs e)
         {
             if (ID > 0)
             {
                 btSalvar.Text = "Atualizar";
 
-                
+
                 txtID.Text = ID.ToString();
                 txtNome.Text = Nome;
-                
-                cbPredio.Text=Predio;
-                cbBloco.Text=Bloco;
-                txtEmail.Text=Email;
-                txtIdentidade.Text=Rg; 
-                mbTelefoneResidencial.Text=TelefoneResidencial;
-                mbTelefoneComercial.Text=TelefoneComercial;
-                mbCelular1.Text=Celular1; 
-                mbCelular2.Text=Celular2;
-                mbCpf.Text=Cpf; 
-                txtApartamento.Text=Apartamento;
+
+                cbPredio.Text = Predio;
+                cbBloco.Text = Bloco;
+                txtEmail.Text = Email;
+                txtIdentidade.Text = Rg;
+                mbTelefoneResidencial.Text = TelefoneResidencial;
+                mbTelefoneComercial.Text = TelefoneComercial;
+                mbCelular1.Text = Celular1;
+                mbCelular2.Text = Celular2;
+                mbCpf.Text = Cpf;
+                txtApartamento.Text = Apartamento;
                 txtIDRespn.Text = IDRespn.ToString();
             }
             else
@@ -136,6 +114,44 @@ namespace Cadastro_Moradores_Condominio
                 btSalvar.Text = "Salvar";
             }
         }
+
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!String.IsNullOrEmpty(txtNome.Text) && !String.IsNullOrEmpty(txtID.Text) && !String.IsNullOrEmpty(txtApartamento.Text))
+                {
+                    if (ID == 0)
+                    {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
+                        Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbPredio.Text, cbBloco.Text, txtEmail.Text, txtIdentidade.Text, mbTelefoneResidencial.Text, mbTelefoneComercial.Text, mbCelular1.Text, mbCelular2.Text, mbCpf.Text, txtApartamento.Text, Convert.ToInt32(txtIDRespn.Text));
+                    }
+                    else
+                    {
+                        Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbPredio.Text, cbBloco.Text, txtEmail.Text, txtIdentidade.Text, mbTelefoneResidencial.Text, mbTelefoneComercial.Text, mbCelular1.Text, mbCelular2.Text, mbCpf.Text, txtApartamento.Text, Convert.ToInt32(txtIDRespn.Text));
+                    }
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtID.Text))
+                    {
+                        epErro.SetError(txtID, "Informe o Codigo");
+                    }
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        epErro.SetError(txtNome, "Informe o Nome");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro! " + ex);
+                throw;
+            }
+
+        }
+
+
+
 
 
     }

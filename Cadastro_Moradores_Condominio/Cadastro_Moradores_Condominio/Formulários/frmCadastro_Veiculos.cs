@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class CadastroVeiculos : Form
+    public partial class frmCadastroVeiculos : Form
     {
         string tipo;
         Veiculo veiculo;
 
-        public CadastroVeiculos(Veiculo veiculo, string tipo)
+        public frmCadastroVeiculos(Veiculo veiculo, string tipo)
         {
             this.tipo = tipo;
             this.veiculo = veiculo;

@@ -10,7 +10,7 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Morador
     {
-        public int ID { get; set; }
+        private int ID;
 
         private string Nome;
         private string Predio;
@@ -30,9 +30,9 @@ namespace Cadastro_Moradores_Condominio
         //Variaveis de conexao Add Referencia "System.Configurarion"
         public string strConexao = ConfigurationManager.ConnectionStrings["StringConexao"].ConnectionString;
         // Variaveis contantes para SQL para o CRUd
-        public const string strInsert = "INSERT INTO Morador Values(@ID, @nome, @Predio, @Bloco, @Email,@Rg, @TelefoneResidencial, @TelefoneComercial, @Celular1, @Celular2, @Cpf, @Apartamento, @IDRespn )";
+        public const string strInsert = "INSERT INTO Morador Values(@ID, @nome, @Predio, @Bloco, @Email,@Rg, @TelefoneResidencial, @TelefoneComercial, @Celular1, @Celular2, @Cpf, @Apartamento, @IDResponsavel )";
         public const string strDelete = "DELETE FROM Morador where ID= @ID";
-        public const string strUpdate = "UPDATE Morador SET ID=@ID, Nome = @nome,Predio= @Predio,Bloco= @Bloco,Email= @Email,Rg=@Rg, TelefoneResidencial=@TelefoneResidencial,TelefoneComercial=@TelefoneComercial, Celular1=@Celular1, Celular2=@Celular2, Cpf=@Cpf, Apartamento=@Apartamento where ID= @ID, IDRespn=@IDRespn";
+        public const string strUpdate = "UPDATE Morador SET ID=@ID, Nome=@nome, Predio=@Predio, Bloco=@Bloco, Email=@Email, Rg=@Rg, TelefoneResidencial=@TelefoneResidencial, TelefoneComercial=@TelefoneComercial, Celular1=@Celular1, Celular2=@Celular2, Cpf=@Cpf, Apartamento=@Apartamento where ID=@ID";
         public const string strSelect = "SELECT * FROM Morador";
         public const string strSelectLogin = "SELECT IdLogin,Login,Senha FROM Login WHERE Login = @Login AND Senha=@Senha";
 
@@ -142,16 +142,16 @@ namespace Cadastro_Moradores_Condominio
                     objComando.Parameters.AddWithValue("@ID", pID);
                     objComando.Parameters.AddWithValue("@nome", pNome);
                     objComando.Parameters.AddWithValue("@Predio", pPredio);
-                    objComando.Parameters.AddWithValue("@Bloco", pBloco);
-                    objComando.Parameters.AddWithValue("@Email", pEmail);
-                    objComando.Parameters.AddWithValue("@Rg", pRg);
-                    objComando.Parameters.AddWithValue("@TelefoneResidencial", pTelefoneResidencial);
-                    objComando.Parameters.AddWithValue("@TelefoneComercial", pTelefoneComercial);
-                    objComando.Parameters.AddWithValue("@Celular1", pCelular1);
-                    objComando.Parameters.AddWithValue("@Celular2", pCelular2);
+                    objComando.Parameters.AddWithValue("@bloco", pBloco);
+                    objComando.Parameters.AddWithValue("@email", pEmail);
+                    objComando.Parameters.AddWithValue("@rg", pRg);
+                    objComando.Parameters.AddWithValue("@telefoneResidencial", pTelefoneResidencial);
+                    objComando.Parameters.AddWithValue("@telefoneComercial", pTelefoneComercial);
+                    objComando.Parameters.AddWithValue("@celular1", pCelular1);
+                    objComando.Parameters.AddWithValue("@celular2", pCelular2);
                     objComando.Parameters.AddWithValue("@Cpf", pCpf);
                     objComando.Parameters.AddWithValue("@Apartamento", pApartamento);
-                    objComando.Parameters.AddWithValue("@IDRespn", pIDRespn);
+                    objComando.Parameters.AddWithValue("@IDResponsavel", pIDRespn);
 
                     objConexao.Open();
                     objComando.ExecuteNonQuery();
@@ -178,7 +178,7 @@ namespace Cadastro_Moradores_Condominio
                     objComando.Parameters.AddWithValue("@Celular2", pCelular2);
                     objComando.Parameters.AddWithValue("@Cpf", pCpf);
                     objComando.Parameters.AddWithValue("@Apartamento", pApartamento);
-                    objComando.Parameters.AddWithValue("@IDRespn", pIDRespn);
+                    objComando.Parameters.AddWithValue("@IDResponsavel", pIDRespn);
 
                     objConexao.Open();
                     objComando.ExecuteNonQuery();
@@ -230,7 +230,7 @@ namespace Cadastro_Moradores_Condominio
                                 objMorador.Celular2 = objDataReader["Celular2"].ToString();
                                 objMorador.Cpf = objDataReader["Cpf"].ToString();
                                 objMorador.Email = objDataReader["Email"].ToString();
-                                objMorador.IDRespn = Convert.ToInt32(objDataReader["IDRespn"].ToString());
+                                objMorador.IDRespn = Convert.ToInt32(objDataReader["IDResponsavel"].ToString());
                                 objMorador.Predio = objDataReader["Predio"].ToString();
                                 objMorador.Rg = objDataReader["Rg"].ToString();
                                 objMorador.TelefoneComercial = objDataReader["TelefoneComercial"].ToString();

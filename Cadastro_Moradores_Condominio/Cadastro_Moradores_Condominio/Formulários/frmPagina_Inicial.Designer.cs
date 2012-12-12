@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_Moradores_Condominio
 {
-    partial class Pagina_Inicial
+    partial class frmPagina_Inicial
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.btMoradoresCadastrados.UseVisualStyleBackColor = true;
             this.btMoradoresCadastrados.Click += new System.EventHandler(this.btMoradoresCadastrados_Click);
             // 
-            // Pagina_Inicial
+            // frmPagina_Inicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -60,8 +60,9 @@
             this.Controls.Add(this.btMoradoresCadastrados);
             this.Controls.Add(this.btCadastrarMoradores);
             this.MaximizeBox = false;
-            this.Name = "Pagina_Inicial";
+            this.Name = "frmPagina_Inicial";
             this.Text = "Pagina Inicial";
+           // this.Load += new System.EventHandler(this.frmMoradoresCadastrados_Load);
             this.ResumeLayout(false);
 
         }

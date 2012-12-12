@@ -6,20 +6,19 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Cadastro_Moradores_Condominio;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class MoradoresCadastrados : Form
+    public partial class frmMoradoresCadastrados : Form
     {
-
-        public MoradoresCadastrados()
+        public frmMoradoresCadastrados()
         {
             InitializeComponent();
         }
 
         private void frmConsultaMoradorescs_Load(object sender, EventArgs e)
         {
-            //CarregarGridView();
             CarregarListView();
         }
 
@@ -65,37 +64,41 @@ namespace Cadastro_Moradores_Condominio
 
             try
             {
-                ID = Convert.ToInt32(lstVMoradores.SelectedItems[0].Text);
-                Nome = lstVMoradores.SelectedItems[0].SubItems[1].Text;
-                Predio = lstVMoradores.SelectedItems[0].SubItems[2].Text;
-                Bloco = lstVMoradores.SelectedItems[0].SubItems[3].Text;
-                Email = lstVMoradores.SelectedItems[0].SubItems[4].Text;
-                Rg = lstVMoradores.SelectedItems[0].SubItems[5].Text;
-                TelefoneResidencial = lstVMoradores.SelectedItems[0].SubItems[6].Text;
-                TelefoneComercial = lstVMoradores.SelectedItems[0].SubItems[7].Text;
-                Celular1 = lstVMoradores.SelectedItems[0].SubItems[8].Text;
-                Celular2 = lstVMoradores.SelectedItems[0].SubItems[9].Text;
-                Cpf = lstVMoradores.SelectedItems[0].SubItems[10].Text;
-                Apartamento = lstVMoradores.SelectedItems[0].SubItems[11].Text;
-                IDRespn = Convert.ToInt32(lstVMoradores.SelectedItems[12].SubItems[2].Text);
+                if (lstVMoradores.SelectedItems.Count > 0)
+                {
+                    ID = Convert.ToInt32(lstVMoradores.SelectedItems[0].Text);
+                    Nome = lstVMoradores.SelectedItems[0].SubItems[1].Text;
+                    Predio = lstVMoradores.SelectedItems[0].SubItems[2].Text;
+                    Bloco = lstVMoradores.SelectedItems[0].SubItems[3].Text;
+                    Email = lstVMoradores.SelectedItems[0].SubItems[4].Text;
+                    Rg = lstVMoradores.SelectedItems[0].SubItems[5].Text;
+                    TelefoneResidencial = lstVMoradores.SelectedItems[0].SubItems[6].Text;
+                    TelefoneComercial = lstVMoradores.SelectedItems[0].SubItems[7].Text;
+                    Celular1 = lstVMoradores.SelectedItems[0].SubItems[8].Text;
+                    Celular2 = lstVMoradores.SelectedItems[0].SubItems[9].Text;
+                    Cpf = lstVMoradores.SelectedItems[0].SubItems[10].Text;
+                    Apartamento = lstVMoradores.SelectedItems[0].SubItems[11].Text;
+                    IDRespn = Convert.ToInt32(lstVMoradores.SelectedItems[0].SubItems[12].Text);
 
 
-                Cadastro_Moradores objFrmCadastro = new Cadastro_Moradores();
-                objFrmCadastro.ID = ID;
-                objFrmCadastro.Nome = Nome;
-                objFrmCadastro.Predio = Predio;
-                objFrmCadastro.Bloco = Bloco;
-                objFrmCadastro.Email = Email;
-                objFrmCadastro.Rg = Rg;
-                objFrmCadastro.TelefoneResidencial = TelefoneResidencial;
-                objFrmCadastro.TelefoneComercial = TelefoneComercial;
-                objFrmCadastro.Celular1 = Celular1;
-                objFrmCadastro.Celular2 = Celular2;
-                objFrmCadastro.Cpf = Cpf;
-                objFrmCadastro.Apartamento = Apartamento;
-                objFrmCadastro.IDRespn = IDRespn;
+                    frmCadastro_Moradores objFrmCadastro = new frmCadastro_Moradores();
+                    objFrmCadastro.ID = ID;
+                    objFrmCadastro.Nome = Nome;
+                    objFrmCadastro.Predio = Predio;
+                    objFrmCadastro.Bloco = Bloco;
+                    objFrmCadastro.Email = Email;
+                    objFrmCadastro.Rg = Rg;
+                    objFrmCadastro.TelefoneResidencial = TelefoneResidencial;
+                    objFrmCadastro.TelefoneComercial = TelefoneComercial;
+                    objFrmCadastro.Celular1 = Celular1;
+                    objFrmCadastro.Celular2 = Celular2;
+                    objFrmCadastro.Cpf = Cpf;
+                    objFrmCadastro.Apartamento = Apartamento;
+                    objFrmCadastro.IDRespn = IDRespn;
+                    
 
-                objFrmCadastro.ShowDialog();
+                    objFrmCadastro.ShowDialog();
+                }
 
             }
             catch (Exception ex)
@@ -108,13 +111,13 @@ namespace Cadastro_Moradores_Condominio
         private void CarregarListView()
         {
             Morador objMoradores = new Morador();
-            List<Cadastro_Moradores_Condominio.Morador> lstMoradores = new List<Cadastro_Moradores_Condominio.Morador>();
+            List<Cadastro_Moradores_Condominio.Morador> lstMoradores = new List<Morador>();
             lstMoradores = objMoradores.Selecionar();
 
             foreach (var itemLista in lstMoradores)
             {
                 ListViewItem objListViewItem = new ListViewItem();
-                objListViewItem.Text = itemLista.ID.ToString();
+                objListViewItem.Text = itemLista.Id.ToString();
                 objListViewItem.SubItems.Add(itemLista.nome);
                 objListViewItem.SubItems.Add(itemLista.predio);
                 objListViewItem.SubItems.Add(itemLista.bloco);
@@ -132,17 +135,32 @@ namespace Cadastro_Moradores_Condominio
             }
         }
 
+        
+
+        private void btEditar_Click(object sender, EventArgs e)
+        {
+            EditarRegistro(); 
+        }
+
         private void btExcluir_Click(object sender, EventArgs e)
         {
             ExcluirRegistro();
         }
 
-        private void btEditar_Click(object sender, EventArgs e)
+        private void btADD_Click(object sender, EventArgs e)
         {
-            EditarRegistro();
+            frmCadastro_Moradores frmCadastro = new frmCadastro_Moradores();
+            frmCadastro.ShowDialog();
         }
 
-        
+        private void frmMoradoresCadastrados_Load(object sender, EventArgs e)
+        {
+            CarregarListView();
+        }
+
+             
+
+                
     }
     /* List<Morador> lista_moradores = new List<Morador>();
      Morador morador;

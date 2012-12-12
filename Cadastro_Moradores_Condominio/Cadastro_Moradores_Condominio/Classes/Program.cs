@@ -15,7 +15,8 @@ namespace Cadastro_Moradores_Condominio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Pagina_Inicial());
+            //Application.Run(new frmMoradoresCadastrados());
+            Application.Run(new frmPagina_Inicial());
         }
     }
 }

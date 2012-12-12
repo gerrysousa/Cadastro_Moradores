@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class CadastroLocacao :Form
+    public partial class frmCadastroLocacao :Form
     {
         string tipo;
         private Locacao locacao;
@@ -228,7 +228,7 @@ namespace Cadastro_Moradores_Condominio
         }
         #endregion
 
-        public CadastroLocacao(Locacao locacao, string tipo)
+        public frmCadastroLocacao(Locacao locacao, string tipo)
         {
             this.tipo = tipo;
             this.locacao = locacao;

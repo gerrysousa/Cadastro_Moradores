@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class CadastroObservacoes : Form
+    public partial class frmCadastroObservacoes : Form
     {
         string tipo;
         Observacao observacao;
 
-        public CadastroObservacoes(Observacao observacao, string tipo)
+        public frmCadastroObservacoes(Observacao observacao, string tipo)
         {
             this.tipo = tipo;
             this.observacao = observacao;

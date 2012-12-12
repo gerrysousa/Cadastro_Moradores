@@ -9,12 +9,12 @@ using System.Windows.Forms;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class Cadastro_Depententes : Form
+    public partial class frmCadastro_Depententes : Form
     {
         string tipo;
         Dependente dependente;
 
-        public Cadastro_Depententes(Dependente dependente, string tipo)
+        public frmCadastro_Depententes(Dependente dependente, string tipo)
         {
             this.tipo = tipo;
             this.dependente = dependente;

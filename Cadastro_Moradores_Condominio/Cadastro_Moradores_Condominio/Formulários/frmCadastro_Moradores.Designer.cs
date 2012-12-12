@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_Moradores_Condominio
 {
-    partial class Cadastro_Moradores
+    partial class frmCadastro_Moradores
     {
         /// <summary>
         /// Required designer variable.
@@ -89,6 +89,7 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(425, 20);
             this.txtNome.TabIndex = 1;
+          
             // 
             // cbPredio
             // 
@@ -340,6 +341,7 @@
             this.btSalvar.TabIndex = 21;
             this.btSalvar.Text = "Salvar Dados";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // txtID
             // 
@@ -387,7 +389,7 @@
             this.txtEmail.Size = new System.Drawing.Size(350, 20);
             this.txtEmail.TabIndex = 30;
             // 
-            // Cadastro_Moradores
+            // frmCadastro_Moradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -426,8 +428,9 @@
             this.Controls.Add(this.lbPredio);
             this.Controls.Add(this.lbMorador);
             this.MaximizeBox = false;
-            this.Name = "Cadastro_Moradores";
+            this.Name = "frmCadastro_Moradores";
             this.Text = "Cadastro de Moradores";
+            this.Load += new System.EventHandler(this.frmCadastro_Moradores_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_Moradores_Condominio
 {
-    partial class Cadastro_Visitantes
+    partial class frmCadastro_Depententes
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tbVisitante6 = new System.Windows.Forms.TextBox();
+            this.tbDependentes6 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -38,15 +38,15 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.tbVisitante1 = new System.Windows.Forms.TextBox();
+            this.tbDependentes1 = new System.Windows.Forms.TextBox();
             this.tbParentesco1 = new System.Windows.Forms.TextBox();
-            this.tbVisitante2 = new System.Windows.Forms.TextBox();
+            this.tbDependentes2 = new System.Windows.Forms.TextBox();
             this.tbParentesco2 = new System.Windows.Forms.TextBox();
-            this.tbVisitante3 = new System.Windows.Forms.TextBox();
+            this.tbDependentes3 = new System.Windows.Forms.TextBox();
             this.tbParentesco3 = new System.Windows.Forms.TextBox();
-            this.tbVisitante4 = new System.Windows.Forms.TextBox();
+            this.tbDependentes4 = new System.Windows.Forms.TextBox();
             this.tbParentesco4 = new System.Windows.Forms.TextBox();
-            this.tbVisitante5 = new System.Windows.Forms.TextBox();
+            this.tbDependentes5 = new System.Windows.Forms.TextBox();
             this.tbParentesco5 = new System.Windows.Forms.TextBox();
             this.tbParentesco6 = new System.Windows.Forms.TextBox();
             this.btSalvar = new System.Windows.Forms.Button();
@@ -61,7 +61,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.868066F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.06597F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.06597F));
-            this.tableLayoutPanel1.Controls.Add(this.tbVisitante6, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.tbDependentes6, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.label3, 0, 1);
@@ -70,15 +70,15 @@
             this.tableLayoutPanel1.Controls.Add(this.label6, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label7, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.label8, 0, 6);
-            this.tableLayoutPanel1.Controls.Add(this.tbVisitante1, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.tbDependentes1, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.tbParentesco1, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbVisitante2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tbDependentes2, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tbParentesco2, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.tbVisitante3, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.tbDependentes3, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.tbParentesco3, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.tbVisitante4, 1, 4);
+            this.tableLayoutPanel1.Controls.Add(this.tbDependentes4, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.tbParentesco4, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.tbVisitante5, 1, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tbDependentes5, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbParentesco5, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.tbParentesco6, 2, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
@@ -94,22 +94,22 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(386, 184);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
-            // tbVisitante6
+            // tbDependentes6
             // 
-            this.tbVisitante6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbVisitante6.Location = new System.Drawing.Point(35, 160);
-            this.tbVisitante6.Name = "tbVisitante6";
-            this.tbVisitante6.Size = new System.Drawing.Size(169, 20);
-            this.tbVisitante6.TabIndex = 11;
+            this.tbDependentes6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDependentes6.Location = new System.Drawing.Point(35, 160);
+            this.tbDependentes6.Name = "tbDependentes6";
+            this.tbDependentes6.Size = new System.Drawing.Size(169, 20);
+            this.tbDependentes6.TabIndex = 11;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(35, 1);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(71, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Visitantes Autorizados";
+            this.label1.Text = "Dependentes";
             // 
             // label2
             // 
@@ -174,13 +174,13 @@
             this.label8.TabIndex = 7;
             this.label8.Text = "06";
             // 
-            // tbVisitante1
+            // tbDependentes1
             // 
-            this.tbVisitante1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbVisitante1.Location = new System.Drawing.Point(35, 30);
-            this.tbVisitante1.Name = "tbVisitante1";
-            this.tbVisitante1.Size = new System.Drawing.Size(169, 20);
-            this.tbVisitante1.TabIndex = 1;
+            this.tbDependentes1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDependentes1.Location = new System.Drawing.Point(35, 30);
+            this.tbDependentes1.Name = "tbDependentes1";
+            this.tbDependentes1.Size = new System.Drawing.Size(169, 20);
+            this.tbDependentes1.TabIndex = 1;
             // 
             // tbParentesco1
             // 
@@ -190,13 +190,13 @@
             this.tbParentesco1.Size = new System.Drawing.Size(171, 20);
             this.tbParentesco1.TabIndex = 2;
             // 
-            // tbVisitante2
+            // tbDependentes2
             // 
-            this.tbVisitante2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbVisitante2.Location = new System.Drawing.Point(35, 56);
-            this.tbVisitante2.Name = "tbVisitante2";
-            this.tbVisitante2.Size = new System.Drawing.Size(169, 20);
-            this.tbVisitante2.TabIndex = 3;
+            this.tbDependentes2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDependentes2.Location = new System.Drawing.Point(35, 56);
+            this.tbDependentes2.Name = "tbDependentes2";
+            this.tbDependentes2.Size = new System.Drawing.Size(169, 20);
+            this.tbDependentes2.TabIndex = 3;
             // 
             // tbParentesco2
             // 
@@ -206,13 +206,13 @@
             this.tbParentesco2.Size = new System.Drawing.Size(171, 20);
             this.tbParentesco2.TabIndex = 4;
             // 
-            // tbVisitante3
+            // tbDependentes3
             // 
-            this.tbVisitante3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbVisitante3.Location = new System.Drawing.Point(35, 82);
-            this.tbVisitante3.Name = "tbVisitante3";
-            this.tbVisitante3.Size = new System.Drawing.Size(169, 20);
-            this.tbVisitante3.TabIndex = 5;
+            this.tbDependentes3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDependentes3.Location = new System.Drawing.Point(35, 82);
+            this.tbDependentes3.Name = "tbDependentes3";
+            this.tbDependentes3.Size = new System.Drawing.Size(169, 20);
+            this.tbDependentes3.TabIndex = 5;
             // 
             // tbParentesco3
             // 
@@ -222,13 +222,13 @@
             this.tbParentesco3.Size = new System.Drawing.Size(171, 20);
             this.tbParentesco3.TabIndex = 6;
             // 
-            // tbVisitante4
+            // tbDependentes4
             // 
-            this.tbVisitante4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbVisitante4.Location = new System.Drawing.Point(35, 108);
-            this.tbVisitante4.Name = "tbVisitante4";
-            this.tbVisitante4.Size = new System.Drawing.Size(169, 20);
-            this.tbVisitante4.TabIndex = 7;
+            this.tbDependentes4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDependentes4.Location = new System.Drawing.Point(35, 108);
+            this.tbDependentes4.Name = "tbDependentes4";
+            this.tbDependentes4.Size = new System.Drawing.Size(169, 20);
+            this.tbDependentes4.TabIndex = 7;
             // 
             // tbParentesco4
             // 
@@ -238,13 +238,13 @@
             this.tbParentesco4.Size = new System.Drawing.Size(171, 20);
             this.tbParentesco4.TabIndex = 8;
             // 
-            // tbVisitante5
+            // tbDependentes5
             // 
-            this.tbVisitante5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tbVisitante5.Location = new System.Drawing.Point(35, 134);
-            this.tbVisitante5.Name = "tbVisitante5";
-            this.tbVisitante5.Size = new System.Drawing.Size(169, 20);
-            this.tbVisitante5.TabIndex = 9;
+            this.tbDependentes5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbDependentes5.Location = new System.Drawing.Point(35, 134);
+            this.tbDependentes5.Name = "tbDependentes5";
+            this.tbDependentes5.Size = new System.Drawing.Size(169, 20);
+            this.tbDependentes5.TabIndex = 9;
             // 
             // tbParentesco5
             // 
@@ -266,23 +266,23 @@
             // 
             this.btSalvar.Location = new System.Drawing.Point(12, 202);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(75, 43);
+            this.btSalvar.Size = new System.Drawing.Size(75, 44);
             this.btSalvar.TabIndex = 13;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
-            // Cadastro_Visitantes
+            // frmCadastro_Depententes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(412, 248);
+            this.ClientSize = new System.Drawing.Size(420, 249);
             this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
-            this.Name = "Cadastro_Visitantes";
-            this.Text = "Visitantes";
-            this.Load += new System.EventHandler(this.Cadastro_Visitantes_Load);
+            this.Name = "frmCadastro_Depententes";
+            this.Text = "Depententes";
+            this.Load += new System.EventHandler(this.Cadastro_Depententes_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -292,7 +292,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.TextBox tbVisitante6;
+        private System.Windows.Forms.TextBox tbDependentes6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -301,18 +301,19 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox tbVisitante1;
+        private System.Windows.Forms.TextBox tbDependentes1;
         private System.Windows.Forms.TextBox tbParentesco1;
-        private System.Windows.Forms.TextBox tbVisitante2;
+        private System.Windows.Forms.TextBox tbDependentes2;
         private System.Windows.Forms.TextBox tbParentesco2;
-        private System.Windows.Forms.TextBox tbVisitante3;
+        private System.Windows.Forms.TextBox tbDependentes3;
         private System.Windows.Forms.TextBox tbParentesco3;
-        private System.Windows.Forms.TextBox tbVisitante4;
+        private System.Windows.Forms.TextBox tbDependentes4;
         private System.Windows.Forms.TextBox tbParentesco4;
-        private System.Windows.Forms.TextBox tbVisitante5;
+        private System.Windows.Forms.TextBox tbDependentes5;
         private System.Windows.Forms.TextBox tbParentesco5;
         private System.Windows.Forms.TextBox tbParentesco6;
         private System.Windows.Forms.Button btSalvar;
+
 
     }
 }

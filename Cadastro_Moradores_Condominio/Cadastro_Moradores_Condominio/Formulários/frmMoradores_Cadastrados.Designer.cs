@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_Moradores_Condominio
 {
-    partial class MoradoresCadastrados
+    partial class frmMoradoresCadastrados
     {
         /// <summary>
         /// Required designer variable.
@@ -35,8 +35,6 @@
             this.btVisitantes = new System.Windows.Forms.Button();
             this.btDependentesCadastrados = new System.Windows.Forms.Button();
             this.lstVMoradores = new System.Windows.Forms.ListView();
-            this.btEditar = new System.Windows.Forms.Button();
-            this.btExcluir = new System.Windows.Forms.Button();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.nome = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.predio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -49,6 +47,9 @@
             this.celular2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.apartamento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.IDResponsavel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btEditar = new System.Windows.Forms.Button();
+            this.btExcluir = new System.Windows.Forms.Button();
+            this.btADD = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,9 +60,9 @@
             this.panel1.Controls.Add(this.btObservacoes);
             this.panel1.Controls.Add(this.btVisitantes);
             this.panel1.Controls.Add(this.btDependentesCadastrados);
-            this.panel1.Location = new System.Drawing.Point(853, 0);
+            this.panel1.Location = new System.Drawing.Point(865, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 637);
+            this.panel1.Size = new System.Drawing.Size(304, 487);
             this.panel1.TabIndex = 1;
             // 
             // btLocacao
@@ -128,28 +129,11 @@
             this.lstVMoradores.GridLines = true;
             this.lstVMoradores.Location = new System.Drawing.Point(12, 26);
             this.lstVMoradores.Name = "lstVMoradores";
-            this.lstVMoradores.Size = new System.Drawing.Size(787, 413);
+            this.lstVMoradores.Size = new System.Drawing.Size(783, 413);
             this.lstVMoradores.TabIndex = 2;
             this.lstVMoradores.UseCompatibleStateImageBehavior = false;
             this.lstVMoradores.View = System.Windows.Forms.View.Details;
-            // 
-            // btEditar
-            // 
-            this.btEditar.Location = new System.Drawing.Point(48, 450);
-            this.btEditar.Name = "btEditar";
-            this.btEditar.Size = new System.Drawing.Size(75, 23);
-            this.btEditar.TabIndex = 3;
-            this.btEditar.Text = "Editar";
-            this.btEditar.UseVisualStyleBackColor = true;
-            // 
-            // btExcluir
-            // 
-            this.btExcluir.Location = new System.Drawing.Point(175, 449);
-            this.btExcluir.Name = "btExcluir";
-            this.btExcluir.Size = new System.Drawing.Size(75, 23);
-            this.btExcluir.TabIndex = 4;
-            this.btExcluir.Text = "Excluir";
-            this.btExcluir.UseVisualStyleBackColor = true;
+            //this.lstVMoradores.SelectedIndexChanged += new System.EventHandler(this.lstVMoradores_SelectedIndexChanged);
             // 
             // ID
             // 
@@ -182,6 +166,7 @@
             // foneComercial
             // 
             this.foneComercial.Text = "Telefone Comercial";
+            this.foneComercial.Width = 89;
             // 
             // celular1
             // 
@@ -194,22 +179,56 @@
             // apartamento
             // 
             this.apartamento.Text = "Apartamento";
+            this.apartamento.Width = 72;
             // 
             // IDResponsavel
             // 
             this.IDResponsavel.Text = "Responsavel";
+            this.IDResponsavel.Width = 95;
             // 
-            // MoradoresCadastrados
+            // btEditar
+            // 
+            this.btEditar.Location = new System.Drawing.Point(94, 449);
+            this.btEditar.Name = "btEditar";
+            this.btEditar.Size = new System.Drawing.Size(75, 23);
+            this.btEditar.TabIndex = 3;
+            this.btEditar.Text = "Editar";
+            this.btEditar.UseVisualStyleBackColor = true;
+            this.btEditar.Click += new System.EventHandler(this.btEditar_Click);
+            // 
+            // btExcluir
+            // 
+            this.btExcluir.Location = new System.Drawing.Point(175, 449);
+            this.btExcluir.Name = "btExcluir";
+            this.btExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btExcluir.TabIndex = 4;
+            this.btExcluir.Text = "Excluir";
+            this.btExcluir.UseVisualStyleBackColor = true;
+            this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
+            // 
+            // btADD
+            // 
+            this.btADD.Location = new System.Drawing.Point(13, 449);
+            this.btADD.Name = "btADD";
+            this.btADD.Size = new System.Drawing.Size(75, 23);
+            this.btADD.TabIndex = 5;
+            this.btADD.Text = "Adicionar";
+            this.btADD.UseVisualStyleBackColor = true;
+            this.btADD.Click += new System.EventHandler(this.btADD_Click);
+            // 
+            // frmMoradoresCadastrados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1169, 487);
+            this.Controls.Add(this.btADD);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.lstVMoradores);
             this.Controls.Add(this.panel1);
-            this.Name = "MoradoresCadastrados";
+            this.Name = "frmMoradoresCadastrados";
             this.Text = "Moradores Cadastrados";
+            this.Load += new System.EventHandler(this.frmMoradoresCadastrados_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -238,5 +257,6 @@
         private System.Windows.Forms.ColumnHeader celular2;
         private System.Windows.Forms.ColumnHeader apartamento;
         private System.Windows.Forms.ColumnHeader IDResponsavel;
+        private System.Windows.Forms.Button btADD;
     }
 }

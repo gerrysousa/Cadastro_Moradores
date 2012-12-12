@@ -6,15 +6,28 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Cadastro_Moradores_Condominio;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class Pagina_Inicial : Form
+    public partial class frmPagina_Inicial : Form
     {
         private List<Morador> lista_moradores = new List<Morador>();
-        public Pagina_Inicial()
+        public frmPagina_Inicial()
         {
             InitializeComponent();
+        }
+
+        private void btCadastrarMoradores_Click(object sender, EventArgs e)
+        {
+            frmCadastro_Moradores frmCadastro = new frmCadastro_Moradores();
+            frmCadastro.ShowDialog();
+        }
+
+        private void btMoradoresCadastrados_Click(object sender, EventArgs e)
+        {
+            frmMoradoresCadastrados frmMora = new frmMoradoresCadastrados();
+            frmMora.ShowDialog();
         }
 
         //private void btCadastrarMoradores_Click(object sender, EventArgs e)
