@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using Cadastro_Moradores_Condominio.Formulários;
 
 
 namespace Cadastro_Moradores_Condominio
@@ -36,41 +37,20 @@ namespace Cadastro_Moradores_Condominio
         public ErrorProvider epErro;
         #endregion
 
-
         private void Gravar(int pID, string pNome, string pPredio, string pBloco, string pEmail, string pRg, string pTelefoneResidencial, string pTelefoneComercial, string pCelular1, string pCelular2, string pCpf, string pApartamento, int pIDRespn)
         {
             try
             {
                 Morador objMorador = new Morador();
                 objMorador.Salvar(pID, pNome, pPredio, pBloco, pEmail, pRg, pTelefoneResidencial, pTelefoneComercial, pCelular1, pCelular2, pCpf, pApartamento, pIDRespn);
-                MessageBox.Show("Inserido com Sucesso!");
-                Close();
+                //MessageBox.Show("Inserido com Sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro!" + ex.Message);
                 throw;
             }
-
-
         }
-
-
-
-        //private void btExcluir_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        Morador objMorador = new Morador();
-        //        objMorador.Excluir(Convert.ToInt32(txtExcluir.Text));
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        MessageBox.Show("Erro!" + ex.Message);
-        //        throw;
-        //    }
-        //    MessageBox.Show("Excluido com Sucesso!");
-        //}
 
         private void Atualizar(int pID, string pNome, string pPredio, string pBloco, string pEmail, string pRg, string pTelefoneResidencial, string pTelefoneComercial, string pCelular1, string pCelular2, string pCpf, string pApartamento, int pIDRespn)
         {
@@ -141,18 +121,22 @@ namespace Cadastro_Moradores_Condominio
                         epErro.SetError(txtNome, "Informe o Nome");
                     }
                 }
+                MessageBox.Show("Operação realizada com Sucesso!");
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro! " + ex);
                 throw;
             }
-
+            Close();
         }
 
-
-
-
-
+        private void btCadastroDependentes_Click(object sender, EventArgs e)
+        {
+           // frmCadastro_Dependente objfrmDependentes = new frmCadastro_Dependente();
+            frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
+            //objfrmDependentes.IDteste = Convert.ToInt32(txtID.Text);
+            objfrmDependentes.ShowDialog();
+        }
     }
 }

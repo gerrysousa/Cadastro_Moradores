@@ -13,6 +13,7 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -23,10 +24,10 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -47,6 +48,18 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>BFE523E029826E19798BE9F4E41B09F7022FD2D9</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Cadastro_Moradores_Condominio_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -69,6 +82,12 @@
     </Compile>
     <Compile Include="Classes\Dependente.cs" />
     <Compile Include="Classes\Visitante.cs" />
+    <Compile Include="Formulários\frmCadastro_Dependente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários\frmCadastro_Dependente.Designer.cs">
+      <DependentUpon>frmCadastro_Dependente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulários\frmCadastro_Locacao.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,17 +100,17 @@
     <Compile Include="Formulários\frmCadastro_Moradores.Designer.cs">
       <DependentUpon>frmCadastro_Moradores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulários\frmCadastro_Depententes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulários\frmCadastro_Depententes.Designer.cs">
-      <DependentUpon>frmCadastro_Depententes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulários\frmCadastro_Observacoes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Formulários\frmCadastro_Observacoes.Designer.cs">
       <DependentUpon>frmCadastro_Observacoes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formulários\frmLista_Dependentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários\frmLista_Dependentes.Designer.cs">
+      <DependentUpon>frmLista_Dependentes.cs</DependentUpon>
     </Compile>
     <Compile Include="Formulários\frmPagina_Inicial.cs">
       <SubType>Form</SubType>
@@ -123,17 +142,20 @@
       <DependentUpon>frmCadastro_Visitantes.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\Veiculo.cs" />
+    <EmbeddedResource Include="Formulários\frmCadastro_Dependente.resx">
+      <DependentUpon>frmCadastro_Dependente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmCadastro_Locacao.resx">
       <DependentUpon>frmCadastro_Locacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmCadastro_Moradores.resx">
       <DependentUpon>frmCadastro_Moradores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulários\frmCadastro_Depententes.resx">
-      <DependentUpon>frmCadastro_Depententes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmCadastro_Observacoes.resx">
       <DependentUpon>frmCadastro_Observacoes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários\frmLista_Dependentes.resx">
+      <DependentUpon>frmLista_Dependentes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmMoradores_Cadastrados.resx">
       <DependentUpon>frmMoradores_Cadastrados.cs</DependentUpon>
@@ -170,6 +192,7 @@
     <None Include="BD_CadastroMoradoresDataSet.xss">
       <DependentUpon>BD_CadastroMoradoresDataSet.xsd</DependentUpon>
     </None>
+    <None Include="Cadastro_Moradores_Condominio_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

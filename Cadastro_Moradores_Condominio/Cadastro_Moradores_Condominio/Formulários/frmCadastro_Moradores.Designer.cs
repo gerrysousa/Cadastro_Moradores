@@ -89,7 +89,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(425, 20);
             this.txtNome.TabIndex = 1;
-          
             // 
             // cbPredio
             // 
@@ -305,6 +304,7 @@
             this.btCadastroDependentes.TabIndex = 16;
             this.btCadastroDependentes.Text = "Dependentes";
             this.btCadastroDependentes.UseVisualStyleBackColor = true;
+            this.btCadastroDependentes.Click += new System.EventHandler(this.btCadastroDependentes_Click);
             // 
             // btCadastroVisitantes
             // 

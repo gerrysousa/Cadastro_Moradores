@@ -11,7 +11,6 @@ namespace Cadastro_Moradores_Condominio
     public class Morador
     {
         private int ID;
-
         private string Nome;
         private string Predio;
         private string Bloco;
@@ -24,7 +23,6 @@ namespace Cadastro_Moradores_Condominio
         private string Cpf;
         private string Apartamento;
         private int IDRespn;
-
 
         #region Constantes para o CRUD
         //Variaveis de conexao Add Referencia "System.Configurarion"
@@ -128,7 +126,7 @@ namespace Cadastro_Moradores_Condominio
             get { return this.IDRespn; }
             set { this.IDRespn = value; }
         }
-        
+
         #endregion
 
         #region Manipulaçao dos dados
@@ -213,7 +211,6 @@ namespace Cadastro_Moradores_Condominio
                     try
                     {
                         objConexao.Open();
-
                         SqlDataReader objDataReader = objComando.ExecuteReader();
 
                         if (objDataReader.HasRows)
@@ -223,7 +220,6 @@ namespace Cadastro_Moradores_Condominio
                                 Morador objMorador = new Morador();
                                 objMorador.ID = Convert.ToInt32(objDataReader["ID"].ToString());
                                 objMorador.Nome = objDataReader["nome"].ToString();
-
                                 objMorador.Apartamento = objDataReader["Apartamento"].ToString();
                                 objMorador.Bloco = objDataReader["bloco"].ToString();
                                 objMorador.Celular1 = objDataReader["Celular1"].ToString();
@@ -253,11 +249,5 @@ namespace Cadastro_Moradores_Condominio
             return lstMoradores;
         }
         #endregion
-
-        //Dependente Dependente { get; set; }
-        //Visitante Visitante { get; set; }
-        //Veiculo Veiculo { get; set; }
-        //Locacao Locacao { get; set; }
-        //Observacao Observacao { get; set; }
     }
 }

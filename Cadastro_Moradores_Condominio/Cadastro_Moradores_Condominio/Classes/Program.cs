@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Cadastro_Moradores_Condominio.Formulários;
 
 namespace Cadastro_Moradores_Condominio
 {
@@ -15,7 +16,7 @@ namespace Cadastro_Moradores_Condominio
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmMoradoresCadastrados());
+            //Application.Run(new frmLista_Dependentes());
             Application.Run(new frmPagina_Inicial());
         }
     }
