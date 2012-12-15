@@ -83,7 +83,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
             {
                 if (!String.IsNullOrEmpty(txtNome.Text))//&& !String.IsNullOrEmpty(txtID.Text))
                 {
-                    lbIdRespons.Text = "3";
+                    lbIdRespons.Text = Convert.ToString(IdResponsavel);
                     if (ID2 == 0)
                     {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
                         Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, Convert.ToInt32(lbIdRespons.Text));

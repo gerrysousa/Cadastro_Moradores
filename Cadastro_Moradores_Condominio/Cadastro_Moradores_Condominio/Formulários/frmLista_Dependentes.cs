@@ -16,8 +16,8 @@ namespace Cadastro_Moradores_Condominio.Formulários
             InitializeComponent();
         }
 
-       
-
+        public int IDTeste;
+        
         private void frmLista_Dependentes_Load(object sender, EventArgs e)
         {
             CarregarListView();
@@ -82,7 +82,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
                 nome = lstVDependentes.SelectedItems[0].SubItems[1].Text;
                 parentesco = lstVDependentes.SelectedItems[0].SubItems[2].Text;
                 telefone = lstVDependentes.SelectedItems[0].SubItems[3].Text;
-                //IDResponsavel = Convert.ToInt32(lstVDependentes.SelectedItems[0].SubItems[4].Text); 
+                IDResponsavel = Convert.ToInt32(lstVDependentes.SelectedItems[0].SubItems[4].Text);
 
                 frmCadastro_Dependente objFrmCadastro = new frmCadastro_Dependente();
                 //objFrmCadastro.IDteste = IDResponsavel;
@@ -90,7 +90,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
                 objFrmCadastro.Nome = nome;
                 objFrmCadastro.Parentesco = parentesco;
                 objFrmCadastro.Telefone = telefone;
-               // objFrmCadastro.IdResponsavel = IDResponsavel;
+                objFrmCadastro.IdResponsavel = IDResponsavel;
 
                 objFrmCadastro.ShowDialog();
 
@@ -105,6 +105,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
         private void btADD_Click(object sender, EventArgs e)
         {
             frmCadastro_Dependente objFrmCadastro = new frmCadastro_Dependente();
+            objFrmCadastro.IdResponsavel = IDTeste;
             objFrmCadastro.ShowDialog();
         }
 

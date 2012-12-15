@@ -15,6 +15,7 @@ namespace Cadastro_Moradores_Condominio
         private string Parentesco;
         private string Telefone;
         private int IdResponsavel;
+        public static int IDTeste;
 
         #region Construtores
         public Dependente()
@@ -68,7 +69,7 @@ namespace Cadastro_Moradores_Condominio
         public const string strInsert = "INSERT INTO Dependente Values(@ID, @nome, @Parentesco, @Telefone, @IDResponsavel)";
         public const string strDelete = "DELETE FROM Dependente where ID= @ID";
         public const string strUpdate = "UPDATE Dependente SET Nome=@nome, Parentesco=@Parentesco, Telefone=@Telefone, IDResponsavel=@IDResponsavel WHERE ID=@Id";//ID=@ID,
-        public const string strSelect = "SELECT * FROM Dependente ";//SELECT d.ID, d.nome, d.parentesco, d.telefone  FROM Dependente d INNER JOIN Morador m"WHERE m.ID = @ID";
+        public const string strSelect = "SELECT d.ID, d.nome, d.parentesco, d.telefone, d.IdResponsavel FROM Dependente AS d INNER JOIN Morador AS m ON d.IdResponsavel = m.ID WHERE (d.IdResponsavel = @IdResponsavel)";
         #endregion
 
         #region Manipulaçao dos dados
@@ -128,6 +129,7 @@ namespace Cadastro_Moradores_Condominio
 
         public List<Dependente> Selecionar()
         {
+          
             List<Dependente> lstDependentes = new List<Dependente>();
 
             using (SqlConnection objConexao = new SqlConnection(strConexao))
@@ -136,6 +138,7 @@ namespace Cadastro_Moradores_Condominio
                 {
                     try
                     {
+                        objComando.Parameters.AddWithValue("@IdResponsavel", Convert.ToString(IDTeste));
                         objConexao.Open();
                         SqlDataReader objDataReader = objComando.ExecuteReader();
 
