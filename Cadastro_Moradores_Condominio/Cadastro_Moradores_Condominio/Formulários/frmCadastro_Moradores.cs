@@ -146,5 +146,12 @@ namespace Cadastro_Moradores_Condominio
             Veiculo.IDTeste = Convert.ToInt32(txtID.Text);
             objfrmVeiculo.ShowDialog();
         }
+
+        private void btCadastroVisitantes_Click(object sender, EventArgs e)
+        {
+            frmLista_Visitantes objfrmVisitantes = new frmLista_Visitantes();
+            Visitante.IDTeste = Convert.ToInt32(txtID.Text);
+            objfrmVisitantes.ShowDialog();
+        }
     }
 }

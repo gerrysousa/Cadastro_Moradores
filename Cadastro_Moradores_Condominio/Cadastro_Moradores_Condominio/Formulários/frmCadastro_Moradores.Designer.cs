@@ -314,6 +314,7 @@
             this.btCadastroVisitantes.TabIndex = 17;
             this.btCadastroVisitantes.Text = "Visitantes";
             this.btCadastroVisitantes.UseVisualStyleBackColor = true;
+            this.btCadastroVisitantes.Click += new System.EventHandler(this.btCadastroVisitantes_Click);
             // 
             // btCadastroVeiculos
             // 

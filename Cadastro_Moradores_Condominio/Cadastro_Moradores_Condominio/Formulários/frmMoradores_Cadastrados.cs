@@ -141,17 +141,20 @@ namespace Cadastro_Moradores_Condominio
         private void btEditar_Click(object sender, EventArgs e)
         {
             EditarRegistro();
+            CarregarListView();
         }
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
             ExcluirRegistro();
+            CarregarListView();
         }
 
         private void btADD_Click(object sender, EventArgs e)
         {
             frmCadastro_Moradores frmCadastro = new frmCadastro_Moradores();
             frmCadastro.ShowDialog();
+            CarregarListView();
         }
 
         private void frmMoradoresCadastrados_Load(object sender, EventArgs e)
@@ -190,9 +193,6 @@ namespace Cadastro_Moradores_Condominio
         private void btObservacoes_Click(object sender, EventArgs e)
         {
 
-        }
-
-       
+        }      
     }
 }
-

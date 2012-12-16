@@ -28,6 +28,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
             frmCadastro_Veiculos objFrmCadastro = new frmCadastro_Veiculos();
             objFrmCadastro.IdProprietario = Veiculo.IDTeste;
             objFrmCadastro.ShowDialog();
+            CarregarListView();
         }
 
         private void btEditar_Click(object sender, EventArgs e)

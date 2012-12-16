@@ -11,51 +11,111 @@ namespace Cadastro_Moradores_Condominio
 {
     public partial class frmCadastro_Visitantes : Form
     {
-        string tipo;
-        Visitante visitante;
-
-        public frmCadastro_Visitantes(Visitante visitante, string tipo)
+        public frmCadastro_Visitantes()
         {
-            this.tipo = tipo;
-            this.visitante = visitante;
             InitializeComponent();
+        }
+
+        private void btCancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            visitante.SetVisitante(0, tbVisitante1.Text);
-            visitante.SetParentesco(0, tbParentesco1.Text);
-            visitante.SetVisitante(1, tbVisitante2.Text);
-            visitante.SetParentesco(1, tbParentesco2.Text);
-            visitante.SetVisitante(2, tbVisitante3.Text);
-            visitante.SetParentesco(2, tbParentesco3.Text);
-            visitante.SetVisitante(3, tbVisitante4.Text);
-            visitante.SetVisitante(3, tbParentesco4.Text);
-            visitante.SetVisitante(4, tbVisitante5.Text);
-            visitante.SetParentesco(4, tbParentesco5.Text);
-            visitante.SetVisitante(5, tbVisitante6.Text);
-            visitante.SetParentesco(5, tbParentesco6.Text);
-            this.Close();
+            try
+            {
+                if (!String.IsNullOrEmpty(txtNome.Text))//&& !String.IsNullOrEmpty(txtID.Text))
+                {
+                    lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Visitante.IDTeste);
+                    if (ID2 == 0)
+                    {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
+                        Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, Convert.ToInt32(lbIdRespons.Text));
+                    }
+                    else
+                    {
+                        Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, Convert.ToInt32(lbIdRespons.Text));
+                    }
+                }
+                else
+                {
+                    if (String.IsNullOrEmpty(txtID.Text))
+                    {
+                        epErro.SetError(txtID, "Informe o Codigo");
+                    }
+                    if (String.IsNullOrEmpty(txtNome.Text))
+                    {
+                        epErro.SetError(txtNome, "Informe o Nome");
+                    }
+                }
+                MessageBox.Show("Operação realizada com Sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro! " + ex);
+                throw;
+            }
+            Close();
         }
 
-        private void Cadastro_Visitantes_Load(object sender, EventArgs e)
+        private void frmCadastro_Visitantes_Load(object sender, EventArgs e)
         {
-            if (tipo == "exibicao")
+            if (ID2 > 0)
             {
-                btSalvar.Enabled = false;
-                btSalvar.Visible = false;
-                tbVisitante1.Text = visitante.GetVisitante(0);
-                tbParentesco1.Text = visitante.GetParentesco(0);
-                tbVisitante2.Text = visitante.GetVisitante(1);
-                tbParentesco2.Text = visitante.GetParentesco(1);
-                tbVisitante3.Text = visitante.GetVisitante(2);
-                tbParentesco3.Text = visitante.GetParentesco(2);
-                tbVisitante4.Text = visitante.GetVisitante(3);
-                tbParentesco4.Text = visitante.GetParentesco(3);
-                tbVisitante5.Text = visitante.GetVisitante(4);
-                tbParentesco5.Text = visitante.GetParentesco(4);
-                tbVisitante6.Text = visitante.GetVisitante(5);
-                tbParentesco6.Text = visitante.GetParentesco(5);
+                btSalvar.Text = "Atualizar";
+
+                txtID.Text = ID2.ToString();
+                txtNome.Text = Nome;
+                cbParentesco.Text = Parentesco;
+
+            }
+            else
+            {
+                btSalvar.Text = "Salvar";
+            }
+        }
+
+        #region variaveis publicas
+        public int ID2 = 0;
+        public string Nome;
+        public string Parentesco;
+        public int IdResponsavel;
+        public ErrorProvider epErro;
+
+        public int IDteste;
+        #endregion
+
+        public string SetTextolbIdRespons
+        {
+            set { lbIdRespons.Text = value; }
+        }
+
+        private void Gravar(int pID, string pNome, string pParentesco, int pIdResponsavel)
+        {
+            try
+            {
+                Visitante objVisitante = new Visitante();
+                objVisitante.Salvar(pID, pNome, pParentesco, pIdResponsavel);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro!" + ex.Message);
+                throw;
+            }
+        }
+
+        private void Atualizar(int pID, string pNome, string pParentesco, int pIdResponsavel)
+        {//int pID, 
+            try
+            {
+                Visitante objVisitante = new Visitante();
+                objVisitante.Atualizar(pID, pNome, pParentesco, pIdResponsavel);
+                //pID,
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error! " + ex);
+                throw;
             }
         }
     }

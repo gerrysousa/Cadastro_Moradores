@@ -163,7 +163,7 @@
             this.Controls.Add(this.lbID);
             this.Controls.Add(this.lbNome);
             this.Name = "frmCadastro_Dependente";
-            this.Text = "frmCadastro_Dependentes";
+            this.Text = "Cadastro de Dependentes";
             this.Load += new System.EventHandler(this.frmCadastro_Dependentes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

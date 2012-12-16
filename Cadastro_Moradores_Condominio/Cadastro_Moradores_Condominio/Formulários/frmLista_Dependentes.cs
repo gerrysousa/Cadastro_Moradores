@@ -107,6 +107,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
             frmCadastro_Dependente objFrmCadastro = new frmCadastro_Dependente();
             objFrmCadastro.IdResponsavel = Dependente.IDTeste;
             objFrmCadastro.ShowDialog();
+            CarregarListView();
         }
 
         private void btEditar_Click(object sender, EventArgs e)

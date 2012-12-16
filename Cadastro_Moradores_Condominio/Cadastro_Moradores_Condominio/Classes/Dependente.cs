@@ -25,7 +25,7 @@ namespace Cadastro_Moradores_Condominio
         {
             this.ID = pID;
             this.Nome = pNome;
-            this.Telefone = pParentesco;
+            this.Parentesco = pParentesco;
             this.Telefone = pTelefone;
         }
 
