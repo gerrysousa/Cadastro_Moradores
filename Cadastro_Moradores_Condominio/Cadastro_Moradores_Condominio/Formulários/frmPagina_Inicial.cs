@@ -26,7 +26,7 @@ namespace Cadastro_Moradores_Condominio
 
         private void btMoradoresCadastrados_Click(object sender, EventArgs e)
         {
-            frmMoradoresCadastrados frmMora = new frmMoradoresCadastrados();
+            frmLista_Moradores frmMora = new frmLista_Moradores();
             frmMora.ShowDialog();
         }
 

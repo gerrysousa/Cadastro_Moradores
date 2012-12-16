@@ -100,12 +100,6 @@
     <Compile Include="Formulários\frmCadastro_Moradores.Designer.cs">
       <DependentUpon>frmCadastro_Moradores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formulários\frmCadastro_Observacoes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Formulários\frmCadastro_Observacoes.Designer.cs">
-      <DependentUpon>frmCadastro_Observacoes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Formulários\frmLista_Dependentes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +118,12 @@
     <Compile Include="Formulários\frmLista_Visitantes.Designer.cs">
       <DependentUpon>frmLista_Visitantes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulários\frmObservacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários\frmObservacao.Designer.cs">
+      <DependentUpon>frmObservacao.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulários\frmPagina_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,11 +134,11 @@
     <Compile Include="Classes\Observacao.cs" />
     <Compile Include="Classes\Locacao.cs" />
     <Compile Include="Classes\Morador.cs" />
-    <Compile Include="Formulários\frmMoradores_Cadastrados.cs">
+    <Compile Include="Formulários\frmLista_Moradores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formulários\frmMoradores_Cadastrados.Designer.cs">
-      <DependentUpon>frmMoradores_Cadastrados.cs</DependentUpon>
+    <Compile Include="Formulários\frmLista_Moradores.Designer.cs">
+      <DependentUpon>frmLista_Moradores.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Formulários\frmCadastro_Veiculos.cs">
@@ -163,9 +163,6 @@
     <EmbeddedResource Include="Formulários\frmCadastro_Moradores.resx">
       <DependentUpon>frmCadastro_Moradores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulários\frmCadastro_Observacoes.resx">
-      <DependentUpon>frmCadastro_Observacoes.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmLista_Dependentes.resx">
       <DependentUpon>frmLista_Dependentes.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,8 +172,11 @@
     <EmbeddedResource Include="Formulários\frmLista_Visitantes.resx">
       <DependentUpon>frmLista_Visitantes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formulários\frmMoradores_Cadastrados.resx">
-      <DependentUpon>frmMoradores_Cadastrados.cs</DependentUpon>
+    <EmbeddedResource Include="Formulários\frmLista_Moradores.resx">
+      <DependentUpon>frmLista_Moradores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários\frmObservacao.resx">
+      <DependentUpon>frmObservacao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmPagina_Inicial.resx">
       <DependentUpon>frmPagina_Inicial.cs</DependentUpon>

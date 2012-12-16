@@ -1,6 +1,6 @@
 ﻿namespace Cadastro_Moradores_Condominio
 {
-    partial class frmMoradoresCadastrados
+    partial class frmLista_Moradores
     {
         /// <summary>
         /// Required designer variable.

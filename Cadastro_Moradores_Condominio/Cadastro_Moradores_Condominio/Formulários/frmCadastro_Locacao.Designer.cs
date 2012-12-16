@@ -204,15 +204,15 @@
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(15, 118);
+            this.btSalvar.Location = new System.Drawing.Point(15, 138);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(75, 49);
+            this.btSalvar.Size = new System.Drawing.Size(75, 29);
             this.btSalvar.TabIndex = 7;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
-            // CadastroLocacao
+            // frmCadastroLocacao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,7 +229,7 @@
             this.Controls.Add(this.rbSim);
             this.Controls.Add(this.label13);
             this.MaximizeBox = false;
-            this.Name = "CadastroLocacao";
+            this.Name = "frmCadastroLocacao";
             this.Text = "Aluguel";
             this.Load += new System.EventHandler(this.CadastroLocacao_Load);
             this.ResumeLayout(false);

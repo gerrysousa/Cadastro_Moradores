@@ -258,7 +258,7 @@
             // mbTelefoneResidencial
             // 
             this.mbTelefoneResidencial.Location = new System.Drawing.Point(152, 125);
-            this.mbTelefoneResidencial.Mask = "000000000";
+            this.mbTelefoneResidencial.Mask = "(##) 0000-9999";
             this.mbTelefoneResidencial.Name = "mbTelefoneResidencial";
             this.mbTelefoneResidencial.Size = new System.Drawing.Size(108, 20);
             this.mbTelefoneResidencial.TabIndex = 6;
@@ -266,7 +266,7 @@
             // mbTelefoneComercial
             // 
             this.mbTelefoneComercial.Location = new System.Drawing.Point(152, 159);
-            this.mbTelefoneComercial.Mask = "000000000";
+            this.mbTelefoneComercial.Mask = "(##) 0000-9999";
             this.mbTelefoneComercial.Name = "mbTelefoneComercial";
             this.mbTelefoneComercial.Size = new System.Drawing.Size(108, 20);
             this.mbTelefoneComercial.TabIndex = 8;
@@ -274,7 +274,7 @@
             // mbCelular1
             // 
             this.mbCelular1.Location = new System.Drawing.Point(371, 122);
-            this.mbCelular1.Mask = "000000000";
+            this.mbCelular1.Mask = "(##) 0000-9999";
             this.mbCelular1.Name = "mbCelular1";
             this.mbCelular1.Size = new System.Drawing.Size(118, 20);
             this.mbCelular1.TabIndex = 10;
@@ -282,7 +282,7 @@
             // mbCelular2
             // 
             this.mbCelular2.Location = new System.Drawing.Point(371, 161);
-            this.mbCelular2.Mask = "000000000";
+            this.mbCelular2.Mask = "(##) 0000-9999";
             this.mbCelular2.Name = "mbCelular2";
             this.mbCelular2.Size = new System.Drawing.Size(118, 20);
             this.mbCelular2.TabIndex = 12;
@@ -295,6 +295,7 @@
             this.btCadastroObservacoes.TabIndex = 20;
             this.btCadastroObservacoes.Text = "Observações";
             this.btCadastroObservacoes.UseVisualStyleBackColor = true;
+            this.btCadastroObservacoes.Click += new System.EventHandler(this.btCadastroObservacoes_Click);
             // 
             // btCadastroDependentes
             // 
@@ -334,6 +335,7 @@
             this.btCadastroLocacao.TabIndex = 19;
             this.btCadastroLocacao.Text = "Locação";
             this.btCadastroLocacao.UseVisualStyleBackColor = true;
+            this.btCadastroLocacao.Click += new System.EventHandler(this.btCadastroLocacao_Click);
             // 
             // btSalvar
             // 

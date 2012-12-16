@@ -11,9 +11,9 @@ using Cadastro_Moradores_Condominio.Formulários;
 
 namespace Cadastro_Moradores_Condominio
 {
-    public partial class frmMoradoresCadastrados : Form
+    public partial class frmLista_Moradores : Form
     {
-        public frmMoradoresCadastrados()
+        public frmLista_Moradores()
         {
             InitializeComponent();
         }

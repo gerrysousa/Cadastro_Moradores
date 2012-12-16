@@ -153,5 +153,18 @@ namespace Cadastro_Moradores_Condominio
             Visitante.IDTeste = Convert.ToInt32(txtID.Text);
             objfrmVisitantes.ShowDialog();
         }
+
+        private void btCadastroLocacao_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btCadastroObservacoes_Click(object sender, EventArgs e)
+        {
+            frmObservacao objfrmObservacao = new frmObservacao();
+            Observacao.IDTeste = Convert.ToInt32(txtID.Text);
+            Observacao d = new Observacao();
+            objfrmObservacao.ShowDialog();
+         }
     }
 }

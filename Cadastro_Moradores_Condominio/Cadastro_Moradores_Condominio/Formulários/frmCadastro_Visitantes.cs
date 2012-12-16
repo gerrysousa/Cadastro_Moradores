@@ -67,7 +67,6 @@ namespace Cadastro_Moradores_Condominio
                 txtID.Text = ID2.ToString();
                 txtNome.Text = Nome;
                 cbParentesco.Text = Parentesco;
-
             }
             else
             {
