@@ -112,6 +112,12 @@
     <Compile Include="Formulários\frmLista_Dependentes.Designer.cs">
       <DependentUpon>frmLista_Dependentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formulários\frmLista_Veiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formulários\frmLista_Veiculos.Designer.cs">
+      <DependentUpon>frmLista_Veiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formulários\frmPagina_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmLista_Dependentes.resx">
       <DependentUpon>frmLista_Dependentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formulários\frmLista_Veiculos.resx">
+      <DependentUpon>frmLista_Veiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formulários\frmMoradores_Cadastrados.resx">
       <DependentUpon>frmMoradores_Cadastrados.cs</DependentUpon>

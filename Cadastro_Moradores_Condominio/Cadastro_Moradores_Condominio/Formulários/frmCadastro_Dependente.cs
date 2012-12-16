@@ -31,6 +31,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
         {
             set { lbIdRespons.Text = value; }
         }
+
         private void Gravar(int pID, string pNome, string pParentesco, string pTelefone, int pIdResponsavel)
         {
             try
@@ -83,7 +84,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
             {
                 if (!String.IsNullOrEmpty(txtNome.Text))//&& !String.IsNullOrEmpty(txtID.Text))
                 {
-                    lbIdRespons.Text = Convert.ToString(IdResponsavel);
+                    lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Dependente.IDTeste);
                     if (ID2 == 0)
                     {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
                         Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, Convert.ToInt32(lbIdRespons.Text));

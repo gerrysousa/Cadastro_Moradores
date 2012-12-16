@@ -139,5 +139,12 @@ namespace Cadastro_Moradores_Condominio
             Dependente.IDTeste = Convert.ToInt32(txtID.Text);
             objfrmDependentes.ShowDialog();
         }
+
+        private void btCadastroVeiculos_Click(object sender, EventArgs e)
+        {
+            frmLista_Veiculos objfrmVeiculo = new frmLista_Veiculos();
+            Veiculo.IDTeste = Convert.ToInt32(txtID.Text);
+            objfrmVeiculo.ShowDialog();
+        }
     }
 }

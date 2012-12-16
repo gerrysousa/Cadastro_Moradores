@@ -323,6 +323,7 @@
             this.btCadastroVeiculos.TabIndex = 18;
             this.btCadastroVeiculos.Text = "Veículo";
             this.btCadastroVeiculos.UseVisualStyleBackColor = true;
+            this.btCadastroVeiculos.Click += new System.EventHandler(this.btCadastroVeiculos_Click);
             // 
             // btCadastroLocacao
             // 
