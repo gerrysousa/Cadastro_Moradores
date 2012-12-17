@@ -165,7 +165,7 @@ namespace Cadastro_Moradores_Condominio
         {
             frmObservacao objfrmObservacao = new frmObservacao();
             Observacao.IDTeste = Convert.ToInt32(txtID.Text);
-            Observacao d = new Observacao();
+            //Observacao d = new Observacao();
             objfrmObservacao.ShowDialog();
          }
     }

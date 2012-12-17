@@ -124,7 +124,7 @@ namespace Cadastro_Moradores_Condominio
             }
         }
 
-        public void Excluir(int Id)
+        /*public void Excluir(int Id)
         {
             using (SqlConnection objConexao = new SqlConnection(strConexao))
             {
@@ -137,7 +137,7 @@ namespace Cadastro_Moradores_Condominio
                     objConexao.Close();
                 }
             }
-        }
+        }*/
 
         public Locacao SelecionarLocacao(int pIDResponsavel)
         {/*
@@ -181,48 +181,49 @@ namespace Cadastro_Moradores_Condominio
             }
         }
 
-        public List<Locacao> Selecionar()
-        {
+       /*
+  public List<Locacao> Selecionar()
+         {
 
-            List<Locacao> lstLocacaos = new List<Locacao>();
+             List<Locacao> lstLocacaos = new List<Locacao>();
 
-            using (SqlConnection objConexao = new SqlConnection(strConexao))
-            {
-                using (SqlCommand objComando = new SqlCommand(strSelect, objConexao))
-                {
-                    try
-                    {
-                        objComando.Parameters.AddWithValue("@IdResponsavel", Convert.ToString(IDTeste));
-                        objConexao.Open();
-                        SqlDataReader objDataReader = objComando.ExecuteReader();
+             using (SqlConnection objConexao = new SqlConnection(strConexao))
+             {
+                 using (SqlCommand objComando = new SqlCommand(strSelect, objConexao))
+                 {
+                     try
+                     {
+                         objComando.Parameters.AddWithValue("@IdResponsavel", Convert.ToString(IDTeste));
+                         objConexao.Open();
+                         SqlDataReader objDataReader = objComando.ExecuteReader();
 
-                        if (objDataReader.HasRows)
-                        {
-                            while (objDataReader.Read())
-                            {
-                                Locacao objLocacao = new Locacao();
-                                objLocacao.unidadeAlocada = objDataReader["UnidadeAlocada"].ToString();
-                                objLocacao.nomeProprietario = objDataReader["NomeProprietario"].ToString();
-                                objLocacao.foneProprietario = objDataReader["FoneProprietario"].ToString();
-                                objLocacao.nomeImobiliaria = objDataReader["NomeImobiliaria"].ToString();
-                                objLocacao.foneImobiliaria = objDataReader["FoneImobiliaria"].ToString();
+                         if (objDataReader.HasRows)
+                         {
+                             while (objDataReader.Read())
+                             {
+                                 Locacao objLocacao = new Locacao();
+                                 objLocacao.unidadeAlocada = objDataReader["UnidadeAlocada"].ToString();
+                                 objLocacao.nomeProprietario = objDataReader["NomeProprietario"].ToString();
+                                 objLocacao.foneProprietario = objDataReader["FoneProprietario"].ToString();
+                                 objLocacao.nomeImobiliaria = objDataReader["NomeImobiliaria"].ToString();
+                                 objLocacao.foneImobiliaria = objDataReader["FoneImobiliaria"].ToString();
 
-                                lstLocacaos.Add(objLocacao);
-                            }
-                            objDataReader.Close();
-                        }
-                        objConexao.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Erro!" + ex.Message);
-                        throw;
-                    }
-                }
-            }
+                                 lstLocacaos.Add(objLocacao);
+                             }
+                             objDataReader.Close();
+                         }
+                         objConexao.Close();
+                     }
+                     catch (Exception ex)
+                     {
+                         MessageBox.Show("Erro!" + ex.Message);
+                         throw;
+                     }
+                 }
+             }
 
-            return lstLocacaos;
-        }
+             return lstLocacaos;
+         }*/
         #endregion
     }
 }

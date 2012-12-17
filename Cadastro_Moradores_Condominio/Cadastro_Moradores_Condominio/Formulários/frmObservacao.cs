@@ -22,12 +22,25 @@ namespace Cadastro_Moradores_Condominio.Formulários
         public string Observacaov;
         public ErrorProvider epErro;
         public int IDteste;
+        public int SalvarOuEditar;//se 1 chamar Gravar , se 2 chamar Atualizar
         #endregion
 
         private void frmObservacao_Load(object sender, EventArgs e)
         {
             Observacao objObservacao = new Observacao();
-            txtObservacao.Text = objObservacao.BuscaObservacao(Observacao.IDTeste);//Convert.ToInt32(lbIdRespons.Text)
+            objObservacao = objObservacao.BuscaObservacao(Observacao.IDTeste);
+            //txtObservacao.Text = objObservacao.BuscaObservacao(Observacao.IDTeste);
+            txtObservacao.Text = objObservacao.observacaov;
+            if (txtObservacao.Text == "")
+            {
+                btSalvar.Text = "Salvar";
+                SalvarOuEditar = 1;
+            }
+            else//((rbNao.Checked = false) && (rbSim.Checked = false))
+            {
+                SalvarOuEditar = 2;
+                btSalvar.Text = "Atualizar";
+            } 
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
@@ -35,7 +48,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
             try
             {
                 lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Observacao.IDTeste);
-                if (lbIdRespons.Text == "0")
+                if (SalvarOuEditar == 1)
                 {
                     Gravar(Convert.ToInt32(lbIdRespons.Text), txtObservacao.Text);
                 }

@@ -138,7 +138,7 @@ namespace Cadastro_Moradores_Condominio
             return lstObservacaos;
         }
 
-        public string BuscaObservacao(int pIDResponsavel)
+        public Observacao BuscaObservacao(int pIDResponsavel)
         {
             string Observacaov = "";
             using (SqlConnection objConexao = new SqlConnection(strConexao))
@@ -150,16 +150,16 @@ namespace Cadastro_Moradores_Condominio
                         objComando.Parameters.AddWithValue("@IdResponsavel", Convert.ToString(IDTeste));
                         objConexao.Open();
                         SqlDataReader objDataReader = objComando.ExecuteReader();
-
+                        Observacao objOservacao = new Observacao();
                         if (objDataReader.HasRows)
                         {
                             objDataReader.Read();
                             //nome = leitor["Nome"].ToString();
-                            Observacaov = objDataReader["Observacao"].ToString();
+                            objOservacao.observacaov = objDataReader["Observacao"].ToString();
                         }
                         objConexao.Close();
                         //retorno o nome
-                        return Observacaov;
+                        return objOservacao;
                     }
                     catch (Exception ex)
                     {

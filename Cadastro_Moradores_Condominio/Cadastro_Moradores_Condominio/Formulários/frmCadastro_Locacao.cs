@@ -23,11 +23,12 @@ namespace Cadastro_Moradores_Condominio
         public string NomeImobiliaria;
         public string FoneImobiliaria;
         public int IdResponsavel;
+        public int SalvarOuEditar;//se 1 chamar Gravar , se 2 chamar Atualizar
         public ErrorProvider epErro;
         public int IDteste;
         #endregion
 
-        
+
         public string SetTextolbIdRespons
         {
             set { lbIdRespons.Text = value; }
@@ -62,8 +63,6 @@ namespace Cadastro_Moradores_Condominio
             }
         }
 
-        
-
         private void btCancelar_Click_1(object sender, EventArgs e)
         {
             Close();
@@ -73,23 +72,38 @@ namespace Cadastro_Moradores_Condominio
         {
             try
             {
-                string strUnidadeAlocada = string.Empty;
-                lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Locacao.IDTeste);
-                if (rbSim.Checked)
+                if ((rbNao.Checked = false) && (rbSim.Checked = false))//&& !String.IsNullOrEmpty(txtID.Text))
                 {
-                    strUnidadeAlocada = "Sim";
+                    epErro.SetError(gbLocacao, "Informe se a unidade é alugada!");
                 }
                 else
-                    strUnidadeAlocada = "Nao";
-                /* lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Locacao.IDTeste);
-                 if (lbIdRespons.Text == "0")
-                 {*/
-                     Gravar(strUnidadeAlocada, txtNomeProprietario.Text,txtFoneProprietario.Text, txtImobiliaria.Text,txtFoneImobiliaria.Text, Convert.ToInt32(lbIdRespons.Text));
-                /* }
-                 else
-                 {*/
-               // Atualizar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, Convert.ToInt32(lbIdRespons.Text));
-                //}(string pUnidadeAlocada, string pNomeProprietario, string pFoneProprietario, string pNomeImobiliaria, string pFoneImobiliaria, int pIdResponsavel)
+                {
+                    string strUnidadeAlocada = string.Empty;
+                    lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Locacao.IDTeste);
+                    if (rbSim.Checked)
+                    {
+                        strUnidadeAlocada = "Sim";
+                    }
+                    else
+                    {
+                        strUnidadeAlocada = "Nao";
+
+                    }
+
+                    /* lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Locacao.IDTeste);
+                     if ((rbNao.Checked=false)&&(rbSim.Checked=false))
+                     {*/
+                    if (SalvarOuEditar == 1)
+                    {
+                        Gravar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, Convert.ToInt32(lbIdRespons.Text));
+                    }
+                    else
+                    {
+                        Atualizar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, Convert.ToInt32(lbIdRespons.Text));
+                    }
+                    //(string pUnidadeAlocada, string pNomeProprietario, string pFoneProprietario, string pNomeImobiliaria, string pFoneImobiliaria, int pIdResponsavel)
+
+                }
                 MessageBox.Show("Operação realizada com Sucesso!");
             }
             catch (Exception ex)
@@ -102,24 +116,40 @@ namespace Cadastro_Moradores_Condominio
 
         private void frmCadastro_Locacao_Load(object sender, EventArgs e)
         {
+
             Locacao objLocacao = new Locacao();
-            //txtLocacao.Text = 
             objLocacao = objLocacao.SelecionarLocacao(Locacao.IDTeste);//Convert.ToInt32(lbIdRespons.Text)
             txtFoneImobiliaria.Text = objLocacao.foneImobiliaria;
             txtFoneProprietario.Text = objLocacao.foneProprietario;
             txtImobiliaria.Text = objLocacao.nomeImobiliaria;
             txtNomeProprietario.Text = objLocacao.nomeProprietario;
+            lbIdRespons.Text = Convert.ToString(objLocacao.IDResponsavel);
 
+            if (txtNomeProprietario.Text=="")
+            {
+                btSalvar.Text = "Salvar";
+                SalvarOuEditar = 1;
+            }
+           
             if (objLocacao.unidadeAlocada.Equals("Sim"))
             {
                 rbSim.Checked = true;
+                SalvarOuEditar = 2;
+                btSalvar.Text = "Atualizar";
             }
-            else
+            else if (objLocacao.unidadeAlocada.Equals("Nao"))
             {
                 rbNao.Checked = true;
+                SalvarOuEditar = 2;
+                btSalvar.Text = "Atualizar";
             }
+
+            else//((rbNao.Checked = false) && (rbSim.Checked = false))
+            {
+                btSalvar.Text = "Salvar";
+                SalvarOuEditar = 1;
+            }            
         }
-
-
     }
 }
+
