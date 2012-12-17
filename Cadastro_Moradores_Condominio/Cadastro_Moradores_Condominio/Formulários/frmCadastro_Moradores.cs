@@ -156,7 +156,9 @@ namespace Cadastro_Moradores_Condominio
 
         private void btCadastroLocacao_Click(object sender, EventArgs e)
         {
-
+            frmCadastro_Locacao objfrmLocacao = new frmCadastro_Locacao();
+            Locacao.IDTeste = Convert.ToInt32(txtID.Text);
+            objfrmLocacao.ShowDialog();
         }
 
         private void btCadastroObservacoes_Click(object sender, EventArgs e)
