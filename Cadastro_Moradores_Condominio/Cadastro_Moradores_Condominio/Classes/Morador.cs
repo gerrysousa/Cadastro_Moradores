@@ -108,8 +108,8 @@ namespace Cadastro_Moradores_Condominio
         }
         public string celular2
         {
-            get { return this.Celular1; }
-            set { this.Celular1 = value; }
+            get { return this.Celular2; }
+            set { this.Celular2 = value; }
         }
         public string CPF
         {
