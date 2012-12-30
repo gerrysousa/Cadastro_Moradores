@@ -20,7 +20,6 @@ namespace Cadastro_Moradores_Condominio
 
         #region variaveis publicas
         public int ID = 0;
-
         public string Nome;
         public string Predio;
         public string Bloco;
@@ -48,7 +47,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Erro!" + ex.Message);
-                throw;
+                //throw;
             }
         }
 
@@ -63,7 +62,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Error! " + ex);
-                throw;
+                //throw;
             }
         }
 
@@ -126,7 +125,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Erro! " + ex);
-                throw;
+                //throw;
             }
             Close();
         }

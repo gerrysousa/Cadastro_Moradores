@@ -140,7 +140,7 @@ namespace Cadastro_Moradores_Condominio
 
         public Observacao BuscaObservacao(int pIDResponsavel)
         {
-            string Observacaov = "";
+            //string Observacaov = "";
             using (SqlConnection objConexao = new SqlConnection(strConexao))
             {
                 using (SqlCommand objComando = new SqlCommand(strSelect, objConexao))

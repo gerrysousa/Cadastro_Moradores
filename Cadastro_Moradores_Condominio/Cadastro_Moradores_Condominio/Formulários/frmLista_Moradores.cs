@@ -43,7 +43,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Erro! " + ex);
-                throw;
+                //throw;
             }
         }
 
@@ -78,9 +78,9 @@ namespace Cadastro_Moradores_Condominio
                     Celular1 = lstVMoradores.SelectedItems[0].SubItems[8].Text;
                     Celular2 = lstVMoradores.SelectedItems[0].SubItems[9].Text;
                     Cpf = lstVMoradores.SelectedItems[0].SubItems[10].Text;
-                    Apartamento = lstVMoradores.SelectedItems[0].SubItems[11].Text;
-                    IDRespn = Convert.ToInt32(lstVMoradores.SelectedItems[0].SubItems[12].Text);
-
+                    IDRespn = Convert.ToInt32(lstVMoradores.SelectedItems[0].SubItems[11].Text);
+                    Apartamento = lstVMoradores.SelectedItems[0].SubItems[12].Text;
+                    
 
                     frmCadastro_Moradores objFrmCadastro = new frmCadastro_Moradores();
                     objFrmCadastro.ID = ID;
