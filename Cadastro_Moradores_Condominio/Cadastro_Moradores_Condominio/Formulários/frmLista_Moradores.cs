@@ -169,10 +169,15 @@ namespace Cadastro_Moradores_Condominio
 
         private void btDependentesCadastrados_Click(object sender, EventArgs e)
         {
-          //  frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
+          /* frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
               frmCadastro_Dependente objfrmDependentes = new frmCadastro_Dependente();
               objfrmDependentes.SetTextolbIdRespons = ID.Text;
+              objfrmDependentes.ShowDialog();*/
+              frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
+              //Dependente objTeste = new Dependente();
+              //Dependente.IDTeste = Convert.ToInt32(txtID.Text);
               objfrmDependentes.ShowDialog();
+              CarregarListView();
         }
 
         private void btVisitantes_Click(object sender, EventArgs e)

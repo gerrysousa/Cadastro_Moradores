@@ -70,6 +70,7 @@ namespace Cadastro_Moradores_Condominio
         public const string strDelete = "DELETE FROM Dependente where ID= @ID";
         public const string strUpdate = "UPDATE Dependente SET Nome=@nome, Parentesco=@Parentesco, Telefone=@Telefone, IDResponsavel=@IDResponsavel WHERE ID=@Id";//ID=@ID,
         public const string strSelect = "SELECT d.ID, d.nome, d.parentesco, d.telefone, d.IdResponsavel FROM Dependente AS d INNER JOIN Morador AS m ON d.IdResponsavel = m.ID WHERE (d.IdResponsavel = @IdResponsavel)";
+        public const string strSelectAll = "SELECT d.ID, d.nome, d.parentesco, d.telefone, d.IdResponsavel FROM Dependente AS d";
         #endregion
 
         #region Manipulaçao dos dados
@@ -128,8 +129,7 @@ namespace Cadastro_Moradores_Condominio
         }
 
         public List<Dependente> Selecionar()
-        {
-          
+        {          
             List<Dependente> lstDependentes = new List<Dependente>();
 
             using (SqlConnection objConexao = new SqlConnection(strConexao))
@@ -162,7 +162,49 @@ namespace Cadastro_Moradores_Condominio
                     catch (Exception ex)
                     {
                         MessageBox.Show("Erro!" + ex.Message);
-                        throw;
+                        //throw;
+                    }
+                }
+            }
+
+            return lstDependentes;
+        }
+
+        public List<Dependente> SelecionarTodos()
+        {
+            List<Dependente> lstDependentes = new List<Dependente>();
+
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objComando = new SqlCommand(strSelectAll, objConexao))
+                {
+                    try
+                    {
+                       // objComando.Parameters.AddWithValue("@IdResponsavel", Convert.ToString(IDTeste));
+                        objConexao.Open();
+                        SqlDataReader objDataReader = objComando.ExecuteReader();
+
+                        if (objDataReader.HasRows)
+                        {
+                            while (objDataReader.Read())
+                            {
+                                Dependente objDependente = new Dependente();
+                                objDependente.ID = Convert.ToInt32(objDataReader["ID"].ToString());
+                                objDependente.Nome = objDataReader["nome"].ToString();
+                                objDependente.Parentesco = objDataReader["Parentesco"].ToString();
+                                objDependente.Telefone = objDataReader["Telefone"].ToString();
+                                objDependente.IdResponsavel = Convert.ToInt32(objDataReader["IdResponsavel"].ToString());
+
+                                lstDependentes.Add(objDependente);
+                            }
+                            objDataReader.Close();
+                        }
+                        objConexao.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro!" + ex.Message);
+                        //throw;
                     }
                 }
             }
