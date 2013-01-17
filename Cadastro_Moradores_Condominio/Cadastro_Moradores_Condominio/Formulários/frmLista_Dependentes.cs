@@ -27,7 +27,15 @@ namespace Cadastro_Moradores_Condominio.Formulários
         {
             Dependente objDependentes = new Dependente();
             List<Cadastro_Moradores_Condominio.Dependente> lstDependentes = new List<Dependente>();
-            lstDependentes = objDependentes.Selecionar();
+
+            if (Dependente.IDTeste == -2)
+            {
+                lstDependentes = objDependentes.SelecionarTodos();
+            }
+            else
+            {
+                lstDependentes = objDependentes.Selecionar();
+            }
 
             lstVDependentes.Items.Clear();
 

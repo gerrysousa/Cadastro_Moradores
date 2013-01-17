@@ -52,8 +52,15 @@ namespace Cadastro_Moradores_Condominio.Formulários
         {
             Visitante objVisitantes = new Visitante();
             List<Cadastro_Moradores_Condominio.Visitante> lstVisitantes = new List<Visitante>();
-            lstVisitantes = objVisitantes.Selecionar();
-
+           
+            if (Visitante.IDTeste == -2)
+            {
+                lstVisitantes = objVisitantes.SelecionarTodos();
+            }
+            else
+            {
+                lstVisitantes = objVisitantes.Selecionar();
+            }
             lstVVisitantes.Items.Clear();
 
             foreach (var itemLista in lstVisitantes)
@@ -66,7 +73,6 @@ namespace Cadastro_Moradores_Condominio.Formulários
 
                 lstVVisitantes.Items.Add(objListViewItem);
             }
-
         }
 
         private void ExcluirRegistro()
@@ -122,6 +128,19 @@ namespace Cadastro_Moradores_Condominio.Formulários
             }
 
         }
+
+      /*  private void btPesquisar_Click(object sender, EventArgs e)
+        {
+            if (txtProcura.Text == string.Empty)
+            {
+                MessageBox.Show("Informe um nome!");
+                    //alunosDataGridView.DataSource = alunosTableAdapter.GetData();
+            }
+            else
+            {
+                alunosDataGridView.DataSource = alunosTableAdapter.GetDataByNome("%" + txtNome.Text + "%");
+            }
+        }*/
 
     }
 }

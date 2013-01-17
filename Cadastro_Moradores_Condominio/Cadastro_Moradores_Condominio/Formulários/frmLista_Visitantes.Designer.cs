@@ -37,6 +37,10 @@
             this.btADD = new System.Windows.Forms.Button();
             this.btEditar = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
+            this.txtProcura = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btPesquisar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lstVVisitantes
@@ -48,7 +52,7 @@
             this.IDResponsavel});
             this.lstVVisitantes.FullRowSelect = true;
             this.lstVVisitantes.GridLines = true;
-            this.lstVVisitantes.Location = new System.Drawing.Point(12, 12);
+            this.lstVVisitantes.Location = new System.Drawing.Point(12, 65);
             this.lstVVisitantes.Name = "lstVVisitantes";
             this.lstVVisitantes.Size = new System.Drawing.Size(578, 312);
             this.lstVVisitantes.TabIndex = 1;
@@ -77,7 +81,7 @@
             // 
             // btAtualizar
             // 
-            this.btAtualizar.Location = new System.Drawing.Point(24, 348);
+            this.btAtualizar.Location = new System.Drawing.Point(24, 401);
             this.btAtualizar.Name = "btAtualizar";
             this.btAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btAtualizar.TabIndex = 18;
@@ -87,7 +91,7 @@
             // 
             // btADD
             // 
-            this.btADD.Location = new System.Drawing.Point(340, 348);
+            this.btADD.Location = new System.Drawing.Point(340, 401);
             this.btADD.Name = "btADD";
             this.btADD.Size = new System.Drawing.Size(75, 23);
             this.btADD.TabIndex = 17;
@@ -97,7 +101,7 @@
             // 
             // btEditar
             // 
-            this.btEditar.Location = new System.Drawing.Point(423, 348);
+            this.btEditar.Location = new System.Drawing.Point(423, 401);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(75, 23);
             this.btEditar.TabIndex = 16;
@@ -107,7 +111,7 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(506, 348);
+            this.btExcluir.Location = new System.Drawing.Point(506, 401);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(75, 23);
             this.btExcluir.TabIndex = 15;
@@ -115,11 +119,50 @@
             this.btExcluir.UseVisualStyleBackColor = true;
             this.btExcluir.Click += new System.EventHandler(this.btExcluir_Click);
             // 
+            // txtProcura
+            // 
+            this.txtProcura.Location = new System.Drawing.Point(98, 29);
+            this.txtProcura.Name = "txtProcura";
+            this.txtProcura.Size = new System.Drawing.Size(294, 20);
+            this.txtProcura.TabIndex = 19;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(21, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 20;
+            this.label1.Text = "Pesquisar";
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Location = new System.Drawing.Point(398, 26);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btPesquisar.TabIndex = 21;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            //this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(64, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "Nome";
+            // 
             // frmLista_Visitantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 383);
+            this.ClientSize = new System.Drawing.Size(610, 446);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btPesquisar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtProcura);
             this.Controls.Add(this.btAtualizar);
             this.Controls.Add(this.btADD);
             this.Controls.Add(this.btEditar);
@@ -129,6 +172,7 @@
             this.Text = "Lista de Visitantes";
             this.Load += new System.EventHandler(this.frmLista_Visitantes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -143,5 +187,9 @@
         private System.Windows.Forms.Button btADD;
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btExcluir;
+        private System.Windows.Forms.TextBox txtProcura;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btPesquisar;
+        private System.Windows.Forms.Label label2;
     }
 }

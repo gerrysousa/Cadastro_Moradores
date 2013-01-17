@@ -102,6 +102,13 @@
             // cbParentesco
             // 
             this.cbParentesco.FormattingEnabled = true;
+            this.cbParentesco.Items.AddRange(new object[] {
+            "Pai",
+            "Mãe",
+            "Irmã(o)",
+            "Parente",
+            "Amigo",
+            "Outro"});
             this.cbParentesco.Location = new System.Drawing.Point(122, 120);
             this.cbParentesco.Name = "cbParentesco";
             this.cbParentesco.Size = new System.Drawing.Size(121, 21);

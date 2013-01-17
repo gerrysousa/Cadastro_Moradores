@@ -132,9 +132,8 @@ namespace Cadastro_Moradores_Condominio
 
         private void btCadastroDependentes_Click(object sender, EventArgs e)
         {
-            // frmCadastro_Dependente objfrmDependentes = new frmCadastro_Dependente();
             frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
-            //Dependente objTeste = new Dependente();
+
             Dependente.IDTeste = Convert.ToInt32(txtID.Text);
             objfrmDependentes.ShowDialog();
         }
@@ -166,6 +165,6 @@ namespace Cadastro_Moradores_Condominio
             Observacao.IDTeste = Convert.ToInt32(txtID.Text);
             //Observacao d = new Observacao();
             objfrmObservacao.ShowDialog();
-         }
+        }
     }
 }

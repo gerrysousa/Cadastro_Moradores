@@ -80,7 +80,7 @@ namespace Cadastro_Moradores_Condominio
                     Cpf = lstVMoradores.SelectedItems[0].SubItems[10].Text;
                     IDRespn = Convert.ToInt32(lstVMoradores.SelectedItems[0].SubItems[11].Text);
                     Apartamento = lstVMoradores.SelectedItems[0].SubItems[12].Text;
-                    
+
 
                     frmCadastro_Moradores objFrmCadastro = new frmCadastro_Moradores();
                     objFrmCadastro.ID = ID;
@@ -96,7 +96,7 @@ namespace Cadastro_Moradores_Condominio
                     objFrmCadastro.Cpf = Cpf;
                     objFrmCadastro.Apartamento = Apartamento;
                     objFrmCadastro.IDRespn = IDRespn;
-                    
+
                     objFrmCadastro.ShowDialog();
                 }
 
@@ -115,7 +115,7 @@ namespace Cadastro_Moradores_Condominio
             lstMoradores = objMoradores.Selecionar();
 
             lstVMoradores.Items.Clear();
-            
+
             foreach (var itemLista in lstMoradores)
             {
                 ListViewItem objListViewItem = new ListViewItem();
@@ -132,10 +132,10 @@ namespace Cadastro_Moradores_Condominio
                 objListViewItem.SubItems.Add(itemLista.CPF);
                 objListViewItem.SubItems.Add(itemLista.IdRespn.ToString());
                 objListViewItem.SubItems.Add(itemLista.apartamento);
-                
-                lstVMoradores.Items.Add(objListViewItem);                
+
+                lstVMoradores.Items.Add(objListViewItem);
             }
-           
+
         }
 
         private void btEditar_Click(object sender, EventArgs e)
@@ -163,31 +163,30 @@ namespace Cadastro_Moradores_Condominio
         }
 
         private void btAtualizaLista_Click(object sender, EventArgs e)
-        {            
+        {
             CarregarListView();
         }
 
         private void btDependentesCadastrados_Click(object sender, EventArgs e)
         {
-          /* frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
-              frmCadastro_Dependente objfrmDependentes = new frmCadastro_Dependente();
-              objfrmDependentes.SetTextolbIdRespons = ID.Text;
-              objfrmDependentes.ShowDialog();*/
-              frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
-              //Dependente objTeste = new Dependente();
-              //Dependente.IDTeste = Convert.ToInt32(txtID.Text);
-              objfrmDependentes.ShowDialog();
-              CarregarListView();
+            frmLista_Dependentes objfrmDependentes = new frmLista_Dependentes();
+            Dependente.IDTeste = -2;
+            objfrmDependentes.ShowDialog();
+           
         }
 
         private void btVisitantes_Click(object sender, EventArgs e)
         {
-
+            frmLista_Visitantes objfrmVisitantes = new frmLista_Visitantes();
+            Visitante.IDTeste = -2;
+            objfrmVisitantes.ShowDialog();
         }
 
         private void btVeículo_Click(object sender, EventArgs e)
         {
-
+            frmLista_Veiculos objfrmVeiculo = new frmLista_Veiculos();
+            Veiculo.IDTeste = -2;
+            objfrmVeiculo.ShowDialog();
         }
 
         private void btLocacao_Click(object sender, EventArgs e)
@@ -198,6 +197,6 @@ namespace Cadastro_Moradores_Condominio
         private void btObservacoes_Click(object sender, EventArgs e)
         {
 
-        }      
+        }
     }
 }

@@ -52,8 +52,15 @@ namespace Cadastro_Moradores_Condominio.Formulários
         {
             Veiculo objVeiculos = new Veiculo();
             List<Cadastro_Moradores_Condominio.Veiculo> lstVeiculos = new List<Veiculo>();
-            lstVeiculos = objVeiculos.Selecionar();
 
+            if (Veiculo.IDTeste == -2)
+            {
+                lstVeiculos = objVeiculos.SelecionarTodos(); 
+            }
+            else
+            {
+                lstVeiculos = objVeiculos.Selecionar();
+            }
             lstVVeiculos.Items.Clear();
 
             foreach (var itemLista in lstVeiculos)

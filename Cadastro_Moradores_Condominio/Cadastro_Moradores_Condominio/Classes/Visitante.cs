@@ -63,7 +63,9 @@ namespace Cadastro_Moradores_Condominio
         public const string strDelete = "DELETE FROM Visitante where ID= @ID";
         public const string strUpdate = "UPDATE Visitante SET Nome=@nome, Parentesco=@Parentesco, IDResponsavel=@IDResponsavel WHERE ID=@Id";//ID=@ID,
         public const string strSelect = "SELECT v.ID, v.nome, v.parentesco, v.IdResponsavel FROM Visitante AS v INNER JOIN Morador AS m ON v.IdResponsavel = m.ID WHERE (v.IdResponsavel = @IdResponsavel)";
-        #endregion
+        public const string strSelectAll = "SELECT v.ID, v.nome, v.parentesco, v.IdResponsavel FROM Visitante AS v";
+        public const string strSelectByName = "SELECT v.ID, v.nome, v.parentesco, v.IdResponsavel FROM Visitante AS v WHERE v.nome LIKE '% %'";
+        #endregion 
 
         #region Manipulaçao dos dados
 
@@ -153,6 +155,89 @@ namespace Cadastro_Moradores_Condominio
                     {
                         MessageBox.Show("Erro!" + ex.Message);
                         throw;
+                    }
+                }
+            }
+
+            return lstVisitantes;
+        }
+
+        public List<Visitante> SelecionarTodos()
+        {
+
+            List<Visitante> lstVisitantes = new List<Visitante>();
+
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objComando = new SqlCommand(strSelectAll, objConexao))
+                {
+                    try
+                    {
+                       objConexao.Open();
+                        SqlDataReader objDataReader = objComando.ExecuteReader();
+
+                        if (objDataReader.HasRows)
+                        {
+                            while (objDataReader.Read())
+                            {
+                                Visitante objVisitante = new Visitante();
+                                objVisitante.ID = Convert.ToInt32(objDataReader["ID"].ToString());
+                                objVisitante.Nome = objDataReader["nome"].ToString();
+                                objVisitante.Parentesco = objDataReader["Parentesco"].ToString();
+                                objVisitante.IdResponsavel = Convert.ToInt32(objDataReader["IdResponsavel"].ToString());
+
+                                lstVisitantes.Add(objVisitante);
+                            }
+                            objDataReader.Close();
+                        }
+                        objConexao.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro!" + ex.Message);
+                        //throw;
+                    }
+                }
+            }
+
+            return lstVisitantes;
+        }
+
+        public List<Visitante> SelecionarPorNome()
+        {
+
+            List<Visitante> lstVisitantes = new List<Visitante>();
+
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objComando = new SqlCommand(strSelectByName, objConexao))
+                {
+                    try
+                    {
+                       // objComando.Parameters.AddWithValue("@Nome", txtProcura.Text);
+                        objConexao.Open();
+                        SqlDataReader objDataReader = objComando.ExecuteReader();
+
+                        if (objDataReader.HasRows)
+                        {
+                            while (objDataReader.Read())
+                            {
+                                Visitante objVisitante = new Visitante();
+                                objVisitante.ID = Convert.ToInt32(objDataReader["ID"].ToString());
+                                objVisitante.Nome = objDataReader["nome"].ToString();
+                                objVisitante.Parentesco = objDataReader["Parentesco"].ToString();
+                                objVisitante.IdResponsavel = Convert.ToInt32(objDataReader["IdResponsavel"].ToString());
+
+                                lstVisitantes.Add(objVisitante);
+                            }
+                            objDataReader.Close();
+                        }
+                        objConexao.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro!" + ex.Message);
+                        //throw;
                     }
                 }
             }
