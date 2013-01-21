@@ -94,6 +94,7 @@ namespace Cadastro_Moradores_Condominio
         public const string strUpdate = "UPDATE Veiculo SET Veiculo=@Veiculo, Marca=@Marca, Modelo=@Modelo, Cor=@Cor, Placa=@Placa, Ano=@Ano,IDProprietario=@IDProprietario WHERE ID=@Id";//ID=@ID,
         public const string strSelect = "SELECT v.ID, v.Veiculo, v.Marca, v.Modelo, v.Cor, v.Placa, v.Ano, v.IdProprietario FROM Veiculo AS v INNER JOIN Morador AS m ON v.IdProprietario = m.ID WHERE (v.IdProprietario = @IdProprietario)";
         public const string strSelectAll = "SELECT v.ID, v.Veiculo, v.Marca, v.Modelo, v.Cor, v.Placa, v.Ano, v.IdProprietario FROM Veiculo AS v";
+        public const string strSelectByPlaca = "SELECT ID, Veiculo, Marca, Modelo, Cor, Placa, Ano, IdProprietario FROM Veiculo WHERE (Placa LIKE @Placa)";
         #endregion
 
         #region Manipulaçao dos dados
@@ -160,7 +161,6 @@ namespace Cadastro_Moradores_Condominio
 
         public List<Veiculo> Selecionar()
         {
-
             List<Veiculo> lstVeiculos = new List<Veiculo>();
 
             using (SqlConnection objConexao = new SqlConnection(strConexao))
@@ -249,6 +249,50 @@ namespace Cadastro_Moradores_Condominio
             return lstVeiculos;
         }
 
+        public List<Veiculo> SelecionarPorPlaca(string pPlaca)
+        {
+            List<Veiculo> lstVeiculos = new List<Veiculo>();
+
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objComando = new SqlCommand(strSelectByPlaca, objConexao))
+                {
+                    try
+                    {
+                        objComando.Parameters.AddWithValue("@Placa", "%" + pPlaca + "%");
+                        objConexao.Open();
+                        SqlDataReader objDataReader = objComando.ExecuteReader();
+
+                        if (objDataReader.HasRows)
+                        {//(pID, pVeiculo, pMarca, pModelo, Cor, pPlaca, pAno, pIdProprietario)
+                            while (objDataReader.Read())
+                            {
+                                Veiculo objVeiculo = new Veiculo();
+                                objVeiculo.ID = Convert.ToInt32(objDataReader["ID"].ToString());
+                                objVeiculo.Veiculov = objDataReader["Veiculo"].ToString();
+                                objVeiculo.Marca = objDataReader["Marca"].ToString();
+                                objVeiculo.Modelo = objDataReader["Modelo"].ToString();
+                                objVeiculo.Cor = objDataReader["Cor"].ToString();
+                                objVeiculo.Placa = objDataReader["Placa"].ToString();
+                                objVeiculo.Ano = objDataReader["Ano"].ToString();
+                                objVeiculo.IdProprietario = Convert.ToInt32(objDataReader["IdProprietario"].ToString());
+
+                                lstVeiculos.Add(objVeiculo);
+                            }
+                            objDataReader.Close();
+                        }
+                        objConexao.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro!" + ex.Message);
+                        //throw;
+                    }
+                }
+            }
+
+            return lstVeiculos;
+        }
         #endregion
     }
 }

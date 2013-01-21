@@ -38,6 +38,9 @@
             this.btEditar = new System.Windows.Forms.Button();
             this.btADD = new System.Windows.Forms.Button();
             this.btAtualizar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btPesquisar = new System.Windows.Forms.Button();
+            this.txtProcura = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lstVDependentes
@@ -50,13 +53,12 @@
             this.IDResponsavel});
             this.lstVDependentes.FullRowSelect = true;
             this.lstVDependentes.GridLines = true;
-            this.lstVDependentes.Location = new System.Drawing.Point(12, 12);
+            this.lstVDependentes.Location = new System.Drawing.Point(12, 63);
             this.lstVDependentes.Name = "lstVDependentes";
             this.lstVDependentes.Size = new System.Drawing.Size(605, 312);
             this.lstVDependentes.TabIndex = 0;
             this.lstVDependentes.UseCompatibleStateImageBehavior = false;
             this.lstVDependentes.View = System.Windows.Forms.View.Details;
-           // this.lstVDependentes.SelectedIndexChanged += new System.EventHandler(this.lstVDependentes_SelectedIndexChanged);
             // 
             // ID
             // 
@@ -85,7 +87,7 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(525, 330);
+            this.btExcluir.Location = new System.Drawing.Point(525, 381);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(75, 23);
             this.btExcluir.TabIndex = 11;
@@ -95,7 +97,7 @@
             // 
             // btEditar
             // 
-            this.btEditar.Location = new System.Drawing.Point(442, 330);
+            this.btEditar.Location = new System.Drawing.Point(442, 381);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(75, 23);
             this.btEditar.TabIndex = 12;
@@ -105,7 +107,7 @@
             // 
             // btADD
             // 
-            this.btADD.Location = new System.Drawing.Point(359, 330);
+            this.btADD.Location = new System.Drawing.Point(359, 381);
             this.btADD.Name = "btADD";
             this.btADD.Size = new System.Drawing.Size(75, 23);
             this.btADD.TabIndex = 13;
@@ -115,7 +117,7 @@
             // 
             // btAtualizar
             // 
-            this.btAtualizar.Location = new System.Drawing.Point(43, 330);
+            this.btAtualizar.Location = new System.Drawing.Point(43, 381);
             this.btAtualizar.Name = "btAtualizar";
             this.btAtualizar.Size = new System.Drawing.Size(75, 23);
             this.btAtualizar.TabIndex = 14;
@@ -123,11 +125,40 @@
             this.btAtualizar.UseVisualStyleBackColor = true;
             this.btAtualizar.Click += new System.EventHandler(this.btAtualizar_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(15, 23);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Pesquisar Nome";
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Location = new System.Drawing.Point(405, 18);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btPesquisar.TabIndex = 24;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            // 
+            // txtProcura
+            // 
+            this.txtProcura.Location = new System.Drawing.Point(105, 21);
+            this.txtProcura.Name = "txtProcura";
+            this.txtProcura.Size = new System.Drawing.Size(294, 20);
+            this.txtProcura.TabIndex = 23;
+            // 
             // frmLista_Dependentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 364);
+            this.ClientSize = new System.Drawing.Size(638, 418);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btPesquisar);
+            this.Controls.Add(this.txtProcura);
             this.Controls.Add(this.btAtualizar);
             this.Controls.Add(this.btADD);
             this.Controls.Add(this.btEditar);
@@ -137,6 +168,7 @@
             this.Text = "Lista de Dependentes";
             this.Load += new System.EventHandler(this.frmLista_Dependentes_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -152,5 +184,8 @@
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btADD;
         private System.Windows.Forms.Button btAtualizar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btPesquisar;
+        private System.Windows.Forms.TextBox txtProcura;
     }
 }

@@ -52,6 +52,9 @@
             this.btExcluir = new System.Windows.Forms.Button();
             this.btADD = new System.Windows.Forms.Button();
             this.btAtualizaLista = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btPesquisar = new System.Windows.Forms.Button();
+            this.txtProcura = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,14 +65,14 @@
             this.panel1.Controls.Add(this.btObservacoes);
             this.panel1.Controls.Add(this.btVisitantes);
             this.panel1.Controls.Add(this.btDependentesCadastrados);
-            this.panel1.Location = new System.Drawing.Point(865, 1);
+            this.panel1.Location = new System.Drawing.Point(865, 63);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 487);
+            this.panel1.Size = new System.Drawing.Size(129, 413);
             this.panel1.TabIndex = 1;
             // 
             // btLocacao
             // 
-            this.btLocacao.Location = new System.Drawing.Point(19, 75);
+            this.btLocacao.Location = new System.Drawing.Point(23, 15);
             this.btLocacao.Name = "btLocacao";
             this.btLocacao.Size = new System.Drawing.Size(85, 45);
             this.btLocacao.TabIndex = 4;
@@ -79,7 +82,7 @@
             // 
             // btVeículo
             // 
-            this.btVeículo.Location = new System.Drawing.Point(201, 12);
+            this.btVeículo.Location = new System.Drawing.Point(23, 168);
             this.btVeículo.Name = "btVeículo";
             this.btVeículo.Size = new System.Drawing.Size(85, 45);
             this.btVeículo.TabIndex = 3;
@@ -89,7 +92,7 @@
             // 
             // btObservacoes
             // 
-            this.btObservacoes.Location = new System.Drawing.Point(110, 75);
+            this.btObservacoes.Location = new System.Drawing.Point(23, 219);
             this.btObservacoes.Name = "btObservacoes";
             this.btObservacoes.Size = new System.Drawing.Size(85, 45);
             this.btObservacoes.TabIndex = 2;
@@ -99,7 +102,7 @@
             // 
             // btVisitantes
             // 
-            this.btVisitantes.Location = new System.Drawing.Point(110, 12);
+            this.btVisitantes.Location = new System.Drawing.Point(23, 117);
             this.btVisitantes.Name = "btVisitantes";
             this.btVisitantes.Size = new System.Drawing.Size(85, 45);
             this.btVisitantes.TabIndex = 1;
@@ -109,7 +112,7 @@
             // 
             // btDependentesCadastrados
             // 
-            this.btDependentesCadastrados.Location = new System.Drawing.Point(19, 12);
+            this.btDependentesCadastrados.Location = new System.Drawing.Point(23, 66);
             this.btDependentesCadastrados.Name = "btDependentesCadastrados";
             this.btDependentesCadastrados.Size = new System.Drawing.Size(85, 45);
             this.btDependentesCadastrados.TabIndex = 0;
@@ -135,7 +138,7 @@
             this.apartamento});
             this.lstVMoradores.FullRowSelect = true;
             this.lstVMoradores.GridLines = true;
-            this.lstVMoradores.Location = new System.Drawing.Point(12, 13);
+            this.lstVMoradores.Location = new System.Drawing.Point(12, 63);
             this.lstVMoradores.Name = "lstVMoradores";
             this.lstVMoradores.Size = new System.Drawing.Size(847, 413);
             this.lstVMoradores.TabIndex = 2;
@@ -199,7 +202,7 @@
             // 
             // btEditar
             // 
-            this.btEditar.Location = new System.Drawing.Point(94, 449);
+            this.btEditar.Location = new System.Drawing.Point(94, 499);
             this.btEditar.Name = "btEditar";
             this.btEditar.Size = new System.Drawing.Size(75, 23);
             this.btEditar.TabIndex = 3;
@@ -209,7 +212,7 @@
             // 
             // btExcluir
             // 
-            this.btExcluir.Location = new System.Drawing.Point(175, 449);
+            this.btExcluir.Location = new System.Drawing.Point(175, 499);
             this.btExcluir.Name = "btExcluir";
             this.btExcluir.Size = new System.Drawing.Size(75, 23);
             this.btExcluir.TabIndex = 4;
@@ -219,7 +222,7 @@
             // 
             // btADD
             // 
-            this.btADD.Location = new System.Drawing.Point(13, 449);
+            this.btADD.Location = new System.Drawing.Point(13, 499);
             this.btADD.Name = "btADD";
             this.btADD.Size = new System.Drawing.Size(75, 23);
             this.btADD.TabIndex = 5;
@@ -229,30 +232,60 @@
             // 
             // btAtualizaLista
             // 
-            this.btAtualizaLista.Location = new System.Drawing.Point(720, 452);
+            this.btAtualizaLista.Location = new System.Drawing.Point(720, 502);
             this.btAtualizaLista.Name = "btAtualizaLista";
             this.btAtualizaLista.Size = new System.Drawing.Size(75, 23);
             this.btAtualizaLista.TabIndex = 6;
-            this.btAtualizaLista.Text = "Refresh";
+            this.btAtualizaLista.Text = "Atualizar";
             this.btAtualizaLista.UseVisualStyleBackColor = true;
             this.btAtualizaLista.Click += new System.EventHandler(this.btAtualizaLista_Click);
             // 
-            // frmMoradoresCadastrados
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 14);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Pesquisar Nome";
+            // 
+            // btPesquisar
+            // 
+            this.btPesquisar.Location = new System.Drawing.Point(407, 9);
+            this.btPesquisar.Name = "btPesquisar";
+            this.btPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btPesquisar.TabIndex = 24;
+            this.btPesquisar.Text = "Pesquisar";
+            this.btPesquisar.UseVisualStyleBackColor = true;
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            // 
+            // txtProcura
+            // 
+            this.txtProcura.Location = new System.Drawing.Point(107, 12);
+            this.txtProcura.Name = "txtProcura";
+            this.txtProcura.Size = new System.Drawing.Size(294, 20);
+            this.txtProcura.TabIndex = 23;
+            // 
+            // frmLista_Moradores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1169, 487);
+            this.ClientSize = new System.Drawing.Size(1005, 539);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btPesquisar);
+            this.Controls.Add(this.txtProcura);
             this.Controls.Add(this.btAtualizaLista);
             this.Controls.Add(this.btADD);
             this.Controls.Add(this.btExcluir);
             this.Controls.Add(this.btEditar);
             this.Controls.Add(this.lstVMoradores);
             this.Controls.Add(this.panel1);
-            this.Name = "frmMoradoresCadastrados";
+            this.Name = "frmLista_Moradores";
             this.Text = "Moradores Cadastrados";
             this.Load += new System.EventHandler(this.frmMoradoresCadastrados_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -282,5 +315,8 @@
         private System.Windows.Forms.Button btADD;
         private System.Windows.Forms.Button btAtualizaLista;
         private System.Windows.Forms.ColumnHeader apartamento;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btPesquisar;
+        private System.Windows.Forms.TextBox txtProcura;
     }
 }

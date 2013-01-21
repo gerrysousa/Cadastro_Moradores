@@ -31,9 +31,9 @@ namespace Cadastro_Moradores_Condominio
         public const string strInsert = "INSERT INTO Morador Values(@ID, @nome, @Predio, @Bloco, @Email,@Rg, @TelefoneResidencial, @TelefoneComercial, @Celular1, @Celular2, @Apartamento, @IDResponsavel, @Cpf )";
         public const string strDelete = "DELETE FROM Morador where ID= @ID";
         public const string strUpdate = "UPDATE Morador SET ID=@ID, Nome=@nome, Predio=@Predio, Bloco=@Bloco, Email=@Email, Rg=@Rg, TelefoneResidencial=@TelefoneResidencial, TelefoneComercial=@TelefoneComercial, Celular1=@Celular1, Celular2=@Celular2, Apartamento=@Apartamento, Cpf=@Cpf, IDResponsavel=@IDResponsavel where ID=@ID";
-        public const string strSelect = "SELECT * FROM Morador";
+        public const string strSelectAll = "SELECT * FROM Morador";
         public const string strSelectLogin = "SELECT IdLogin,Login,Senha FROM Login WHERE Login = @Login AND Senha=@Senha";
-
+        public const string strSelectByName = "SELECT * FROM Morador WHERE (nome LIKE @nome)";
         #endregion
 
         #region Construtores
@@ -218,16 +218,66 @@ namespace Cadastro_Moradores_Condominio
             }
         }
 
-        public List<Morador> Selecionar()
+        public List<Morador> SelecionarTodos()
         {
             List<Morador> lstMoradores = new List<Morador>();
 
             using (SqlConnection objConexao = new SqlConnection(strConexao))
             {
-                using (SqlCommand objComando = new SqlCommand(strSelect, objConexao))
+                using (SqlCommand objComando = new SqlCommand(strSelectAll, objConexao))
                 {
                     try
                     {
+                        objConexao.Open();
+                        SqlDataReader objDataReader = objComando.ExecuteReader();
+
+                        if (objDataReader.HasRows)
+                        {
+                            while (objDataReader.Read())
+                            {
+                                Morador objMorador = new Morador();
+                                objMorador.ID = Convert.ToInt32(objDataReader["ID"].ToString());
+                                objMorador.Nome = objDataReader["nome"].ToString();
+                                objMorador.Apartamento = objDataReader["Apartamento"].ToString();
+                                objMorador.Bloco = objDataReader["bloco"].ToString();
+                                objMorador.Celular1 = objDataReader["Celular1"].ToString();
+                                objMorador.Celular2 = objDataReader["Celular2"].ToString();
+                                objMorador.Cpf = objDataReader["Cpf"].ToString();
+                                objMorador.Email = objDataReader["Email"].ToString();
+                                objMorador.IDRespn = Convert.ToInt32(objDataReader["IDResponsavel"].ToString());
+                                objMorador.Predio = objDataReader["Predio"].ToString();
+                                objMorador.Rg = objDataReader["Rg"].ToString();
+                                objMorador.TelefoneComercial = objDataReader["TelefoneComercial"].ToString();
+                                objMorador.TelefoneResidencial = objDataReader["TelefoneResidencial"].ToString();
+
+                                lstMoradores.Add(objMorador);
+                            }
+                            objDataReader.Close();
+                        }
+                        objConexao.Close();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro!" + ex.Message);
+                        //throw;
+                    }
+                }
+            }
+
+            return lstMoradores;
+        }
+
+        public List<Morador> SelecionarPorNome(string pNome)
+        {
+            List<Morador> lstMoradores = new List<Morador>();
+
+            using (SqlConnection objConexao = new SqlConnection(strConexao))
+            {
+                using (SqlCommand objComando = new SqlCommand(strSelectByName, objConexao))
+                {
+                    try
+                    {
+                        objComando.Parameters.AddWithValue("@Nome", "%" + pNome + "%");
                         objConexao.Open();
                         SqlDataReader objDataReader = objComando.ExecuteReader();
 

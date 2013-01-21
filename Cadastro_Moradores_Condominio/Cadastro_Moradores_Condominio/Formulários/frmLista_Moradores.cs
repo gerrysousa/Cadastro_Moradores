@@ -112,7 +112,7 @@ namespace Cadastro_Moradores_Condominio
         {
             Morador objMoradores = new Morador();
             List<Cadastro_Moradores_Condominio.Morador> lstMoradores = new List<Morador>();
-            lstMoradores = objMoradores.Selecionar();
+            lstMoradores = objMoradores.SelecionarTodos();
 
             lstVMoradores.Items.Clear();
 
@@ -197,6 +197,43 @@ namespace Cadastro_Moradores_Condominio
         private void btObservacoes_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btPesquisar_Click(object sender, EventArgs e)
+        {
+            Morador objMoradores = new Morador();
+            List<Cadastro_Moradores_Condominio.Morador> lstMoradores = new List<Morador>();
+
+            if (txtProcura.Text == string.Empty)
+            {
+                MessageBox.Show("Informe um nome!");
+            }
+
+            else
+            {
+                lstMoradores = objMoradores.SelecionarPorNome(txtProcura.Text); 
+            }
+            lstVMoradores.Items.Clear();
+
+            foreach (var itemLista in lstMoradores)
+            {
+                ListViewItem objListViewItem = new ListViewItem();
+                objListViewItem.Text = itemLista.Id.ToString();
+                objListViewItem.SubItems.Add(itemLista.nome);
+                objListViewItem.SubItems.Add(itemLista.predio);
+                objListViewItem.SubItems.Add(itemLista.bloco);
+                objListViewItem.SubItems.Add(itemLista.email);
+                objListViewItem.SubItems.Add(itemLista.RG);
+                objListViewItem.SubItems.Add(itemLista.telefoneResidencial);
+                objListViewItem.SubItems.Add(itemLista.telefoneComercial);
+                objListViewItem.SubItems.Add(itemLista.celular1);
+                objListViewItem.SubItems.Add(itemLista.celular2);
+                objListViewItem.SubItems.Add(itemLista.CPF);
+                objListViewItem.SubItems.Add(itemLista.IdRespn.ToString());
+                objListViewItem.SubItems.Add(itemLista.apartamento);
+
+                lstVMoradores.Items.Add(objListViewItem);
+            }
         }
     }
 }

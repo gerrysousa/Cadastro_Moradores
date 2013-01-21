@@ -142,5 +142,36 @@ namespace Cadastro_Moradores_Condominio.Formulários
                 MessageBox.Show("Erro! " + ex);
             }
         }
+
+        private void btPesquisar_Click(object sender, EventArgs e)
+        {
+            Veiculo objVeiculos = new Veiculo();
+            List<Cadastro_Moradores_Condominio.Veiculo> lstVeiculos = new List<Veiculo>();
+
+            if (txtProcura.Text == string.Empty)
+            {
+                MessageBox.Show("Informe uma Placa!");
+            }
+            else
+            {
+                lstVeiculos = objVeiculos.SelecionarPorPlaca(txtProcura.Text);
+            }
+            lstVVeiculos.Items.Clear();
+
+            foreach (var itemLista in lstVeiculos)
+            {//(ID, Veiculo, Marca, Modelo, Cor, Placa, Ano, IdProprietario)
+                ListViewItem objListViewItem = new ListViewItem();
+                objListViewItem.Text = itemLista.Id.ToString();
+                objListViewItem.SubItems.Add(itemLista.veiculo);
+                objListViewItem.SubItems.Add(itemLista.marca);
+                objListViewItem.SubItems.Add(itemLista.modelo);
+                objListViewItem.SubItems.Add(itemLista.cor);
+                objListViewItem.SubItems.Add(itemLista.placa);
+                objListViewItem.SubItems.Add(itemLista.ano);
+                objListViewItem.SubItems.Add(Convert.ToString(itemLista.IDProprietario));
+
+                lstVVeiculos.Items.Add(objListViewItem);
+            }
+        }
     }
 }

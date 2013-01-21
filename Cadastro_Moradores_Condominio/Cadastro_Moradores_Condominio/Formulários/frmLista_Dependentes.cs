@@ -134,5 +134,34 @@ namespace Cadastro_Moradores_Condominio.Formulários
         {
             CarregarListView();
         }
+
+        private void btPesquisar_Click(object sender, EventArgs e)
+        {
+            Dependente objDependentes = new Dependente();
+            List<Cadastro_Moradores_Condominio.Dependente> lstDependentes = new List<Dependente>();
+
+            if (txtProcura.Text == string.Empty)
+            {
+                MessageBox.Show("Informe um nome!");
+            }
+            else
+            {
+                lstDependentes = objDependentes.SelecionarPorNome(txtProcura.Text);
+            }
+
+            lstVDependentes.Items.Clear();
+
+            foreach (var itemLista in lstDependentes)
+            {
+                ListViewItem objListViewItem = new ListViewItem();
+                objListViewItem.Text = itemLista.Id.ToString();
+                objListViewItem.SubItems.Add(itemLista.nome);
+                objListViewItem.SubItems.Add(itemLista.parentesco);
+                objListViewItem.SubItems.Add(itemLista.telefone);
+                objListViewItem.SubItems.Add(Convert.ToString(itemLista.IDResponsavel));
+
+                lstVDependentes.Items.Add(objListViewItem);
+            }
+        }
     }
 }
