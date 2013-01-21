@@ -129,18 +129,30 @@ namespace Cadastro_Moradores_Condominio.Formulários
 
         }
 
-      /*  private void btPesquisar_Click(object sender, EventArgs e)
+        private void btPesquisar_Click(object sender, EventArgs e)
         {
+            Visitante objVisitantes = new Visitante();
+            List<Cadastro_Moradores_Condominio.Visitante> lstVisitantes = new List<Visitante>();
             if (txtProcura.Text == string.Empty)
             {
                 MessageBox.Show("Informe um nome!");
-                    //alunosDataGridView.DataSource = alunosTableAdapter.GetData();
             }
             else
             {
-                alunosDataGridView.DataSource = alunosTableAdapter.GetDataByNome("%" + txtNome.Text + "%");
+                lstVisitantes = objVisitantes.SelecionarPorNome(txtProcura.Text);                
             }
-        }*/
+            lstVVisitantes.Items.Clear();
 
+            foreach (var itemLista in lstVisitantes)
+            {
+                ListViewItem objListViewItem = new ListViewItem();
+                objListViewItem.Text = itemLista.Id.ToString();
+                objListViewItem.SubItems.Add(itemLista.nome);
+                objListViewItem.SubItems.Add(itemLista.parentesco);
+                objListViewItem.SubItems.Add(Convert.ToString(itemLista.IDResponsavel));
+
+                lstVVisitantes.Items.Add(objListViewItem);
+            }
+        }    
     }
 }

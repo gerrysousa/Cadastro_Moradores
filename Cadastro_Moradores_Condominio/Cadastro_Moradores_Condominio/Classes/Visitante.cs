@@ -64,7 +64,7 @@ namespace Cadastro_Moradores_Condominio
         public const string strUpdate = "UPDATE Visitante SET Nome=@nome, Parentesco=@Parentesco, IDResponsavel=@IDResponsavel WHERE ID=@Id";//ID=@ID,
         public const string strSelect = "SELECT v.ID, v.nome, v.parentesco, v.IdResponsavel FROM Visitante AS v INNER JOIN Morador AS m ON v.IdResponsavel = m.ID WHERE (v.IdResponsavel = @IdResponsavel)";
         public const string strSelectAll = "SELECT v.ID, v.nome, v.parentesco, v.IdResponsavel FROM Visitante AS v";
-        public const string strSelectByName = "SELECT v.ID, v.nome, v.parentesco, v.IdResponsavel FROM Visitante AS v WHERE v.nome LIKE '% %'";
+        public const string strSelectByName = "SELECT ID, nome, parentesco, IdResponsavel FROM Visitante AS v WHERE (nome LIKE @nome)";
         #endregion 
 
         #region Manipulaçao dos dados
@@ -122,7 +122,6 @@ namespace Cadastro_Moradores_Condominio
 
         public List<Visitante> Selecionar()
         {
-
             List<Visitante> lstVisitantes = new List<Visitante>();
 
             using (SqlConnection objConexao = new SqlConnection(strConexao))
@@ -203,7 +202,7 @@ namespace Cadastro_Moradores_Condominio
             return lstVisitantes;
         }
 
-        public List<Visitante> SelecionarPorNome()
+        public List<Visitante> SelecionarPorNome(string pNome)
         {
 
             List<Visitante> lstVisitantes = new List<Visitante>();
@@ -214,7 +213,7 @@ namespace Cadastro_Moradores_Condominio
                 {
                     try
                     {
-                       // objComando.Parameters.AddWithValue("@Nome", txtProcura.Text);
+                        objComando.Parameters.AddWithValue("@Nome", "%"+pNome+"%");
                         objConexao.Open();
                         SqlDataReader objDataReader = objComando.ExecuteReader();
 

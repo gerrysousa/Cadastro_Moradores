@@ -38,7 +38,6 @@
             this.btEditar = new System.Windows.Forms.Button();
             this.btExcluir = new System.Windows.Forms.Button();
             this.txtProcura = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btPesquisar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -121,38 +120,29 @@
             // 
             // txtProcura
             // 
-            this.txtProcura.Location = new System.Drawing.Point(98, 29);
+            this.txtProcura.Location = new System.Drawing.Point(121, 23);
             this.txtProcura.Name = "txtProcura";
             this.txtProcura.Size = new System.Drawing.Size(294, 20);
             this.txtProcura.TabIndex = 19;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 13);
-            this.label1.TabIndex = 20;
-            this.label1.Text = "Pesquisar";
-            // 
             // btPesquisar
             // 
-            this.btPesquisar.Location = new System.Drawing.Point(398, 26);
+            this.btPesquisar.Location = new System.Drawing.Point(421, 20);
             this.btPesquisar.Name = "btPesquisar";
             this.btPesquisar.Size = new System.Drawing.Size(75, 23);
             this.btPesquisar.TabIndex = 21;
             this.btPesquisar.Text = "Pesquisar";
             this.btPesquisar.UseVisualStyleBackColor = true;
-            //this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
+            this.btPesquisar.Click += new System.EventHandler(this.btPesquisar_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(64, 36);
+            this.label2.Location = new System.Drawing.Point(31, 25);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 22;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Pesquisar Nome";
             // 
             // frmLista_Visitantes
             // 
@@ -161,7 +151,6 @@
             this.ClientSize = new System.Drawing.Size(610, 446);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btPesquisar);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtProcura);
             this.Controls.Add(this.btAtualizar);
             this.Controls.Add(this.btADD);
@@ -188,7 +177,6 @@
         private System.Windows.Forms.Button btEditar;
         private System.Windows.Forms.Button btExcluir;
         private System.Windows.Forms.TextBox txtProcura;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btPesquisar;
         private System.Windows.Forms.Label label2;
     }
