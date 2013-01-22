@@ -45,7 +45,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Erro!" + ex.Message);
-                throw;
+                //throw;
             }
         }
 
@@ -59,7 +59,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Error! " + ex);
-                throw;
+               // throw;
             }
         }
 
@@ -120,7 +120,7 @@ namespace Cadastro_Moradores_Condominio
             catch (Exception ex)
             {
                 MessageBox.Show("Erro! " + ex);
-                throw;
+               // throw;
             }
             Close();
         }

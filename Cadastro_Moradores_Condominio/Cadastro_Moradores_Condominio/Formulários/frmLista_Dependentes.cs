@@ -73,7 +73,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
             catch (Exception ex)
             {
                 MessageBox.Show("Erro! " + ex);
-                throw;
+               // throw;
             }
         }
 

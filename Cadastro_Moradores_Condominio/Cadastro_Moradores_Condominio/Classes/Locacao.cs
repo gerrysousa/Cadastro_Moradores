@@ -175,10 +175,12 @@ namespace Cadastro_Moradores_Condominio
                     catch (Exception ex)
                     {
                         MessageBox.Show("Erro!" + ex.Message);
-                        throw;
+                       // throw;
                     }
                 }
             }
+            Locacao objLocacaoFalha = new Locacao();
+            return objLocacaoFalha;
         }
 
        /*
@@ -217,7 +219,7 @@ namespace Cadastro_Moradores_Condominio
                      catch (Exception ex)
                      {
                          MessageBox.Show("Erro!" + ex.Message);
-                         throw;
+                         //throw;
                      }
                  }
              }

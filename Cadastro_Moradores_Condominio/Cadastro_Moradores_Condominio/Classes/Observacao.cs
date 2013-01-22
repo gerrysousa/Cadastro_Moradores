@@ -130,7 +130,7 @@ namespace Cadastro_Moradores_Condominio
                     catch (Exception ex)
                     {
                         MessageBox.Show("Erro!" + ex.Message);
-                        throw;
+                       // throw;
                     }
                 }
             }
@@ -164,10 +164,13 @@ namespace Cadastro_Moradores_Condominio
                     catch (Exception ex)
                     {
                         MessageBox.Show("Erro!" + ex.Message);
-                        throw;
+                        //throw;
                     }
+                    
                 }
             }
+            Observacao objOservacaoFalha = new Observacao();
+            return objOservacaoFalha;
         }
         #endregion
     }
