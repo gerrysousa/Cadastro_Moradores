@@ -39,8 +39,19 @@ namespace Cadastro_Moradores_Condominio.Formulários
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            ExcluirRegistro();
-            CarregarListView();
+            DialogResult d = MessageBox.Show("Você deseja Excluir este registro?", "Aviso", MessageBoxButtons.YesNo);
+
+            if (d.ToString() == "Yes")
+            {
+                // Código que deve ser executado quando clicar no botão SIM
+                ExcluirRegistro();
+                CarregarListView();
+            }
+            else
+            {
+                // Código que deve ser executado quando clicar no botão NÃO
+
+            }
         }
 
         private void frmLista_Veiculos_Load(object sender, EventArgs e)
