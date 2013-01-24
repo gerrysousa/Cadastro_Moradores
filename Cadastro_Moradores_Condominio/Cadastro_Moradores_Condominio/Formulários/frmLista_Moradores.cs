@@ -146,18 +146,21 @@ namespace Cadastro_Moradores_Condominio
 
         private void btExcluir_Click(object sender, EventArgs e)
         {
-            DialogResult d = MessageBox.Show("Você deseja Excluir este registro?", "Aviso", MessageBoxButtons.YesNo);
-
-            if (d.ToString() == "Yes")
+            if (lstVMoradores.SelectedItems.Count > 0)
             {
-                // Código que deve ser executado quando clicar no botão SIM
-                ExcluirRegistro();
-                CarregarListView();
-            }
-            else
-            {
-                // Código que deve ser executado quando clicar no botão NÃO
+                DialogResult d = MessageBox.Show("Você deseja Excluir este registro?", "Aviso", MessageBoxButtons.YesNo);
 
+                if (d.ToString() == "Yes")
+                {
+                    // Código que deve ser executado quando clicar no botão SIM
+                    ExcluirRegistro();
+                    CarregarListView();
+                }
+                else
+                {
+                    // Código que deve ser executado quando clicar no botão NÃO
+
+                }
             }
         }
 
