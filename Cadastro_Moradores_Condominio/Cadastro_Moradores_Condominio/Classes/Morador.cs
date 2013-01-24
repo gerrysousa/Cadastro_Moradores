@@ -10,6 +10,7 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Morador
     {
+        #region Variaveis
         private int ID;
         private string Nome;
         private string Predio;
@@ -23,6 +24,7 @@ namespace Cadastro_Moradores_Condominio
         private string Cpf;
         private string Apartamento;
         private int IDRespn;
+        #endregion
 
         #region Constantes para o CRUD
         //Variaveis de conexao Add Referencia "System.Configurarion"

@@ -10,6 +10,7 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Veiculo
     {
+        #region Variaveis
         private int ID;
         private string Veiculov;
         private string Marca;
@@ -19,6 +20,7 @@ namespace Cadastro_Moradores_Condominio
         private string Ano;
         private int IdProprietario;
         public static int IDTeste;
+        #endregion
 
         #region Construtores
         public Veiculo()

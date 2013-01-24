@@ -10,7 +10,7 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Locacao
     {
-
+        #region Variaveis
         private string UnidadeAlocada;
         private string NomeProprietario;
         private string FoneProprietario;
@@ -18,6 +18,7 @@ namespace Cadastro_Moradores_Condominio
         private string FoneImobiliaria;
         private int IdResponsavel;
         public static int IDTeste;
+        #endregion
 
         #region Construtores
         public Locacao()

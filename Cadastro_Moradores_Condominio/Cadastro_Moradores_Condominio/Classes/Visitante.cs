@@ -10,11 +10,13 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Visitante
     {
+        #region Variaveis
         private int ID;
         private string Nome;
         private string Parentesco;
         private int IdResponsavel;
         public static int IDTeste;
+        #endregion
 
         #region Construtores
         public Visitante()

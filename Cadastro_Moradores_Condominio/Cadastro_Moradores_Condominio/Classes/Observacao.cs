@@ -10,9 +10,11 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Observacao
     {
+        #region Variaveis
         private int IdResponsavel;
         private string Observacaov;
         public static int IDTeste;
+        #endregion
 
         #region Construtores
         public Observacao()

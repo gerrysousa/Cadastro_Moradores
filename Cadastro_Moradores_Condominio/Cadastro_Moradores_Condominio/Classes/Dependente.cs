@@ -10,12 +10,14 @@ namespace Cadastro_Moradores_Condominio
 {
     public class Dependente
     {
+        #region Variaveis
         private int ID;
         private string Nome;
         private string Parentesco;
         private string Telefone;
         private int IdResponsavel;
         public static int IDTeste;
+        #endregion
 
         #region Construtores
         public Dependente()
