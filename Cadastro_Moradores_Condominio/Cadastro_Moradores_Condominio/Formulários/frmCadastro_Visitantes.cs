@@ -27,14 +27,13 @@ namespace Cadastro_Moradores_Condominio
             {
                 if (!String.IsNullOrEmpty(txtNome.Text))//&& !String.IsNullOrEmpty(txtID.Text))
                 {
-                    lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Visitante.IDTeste);
                     if (ID2 == 0)
                     {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
-                        Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, Convert.ToInt32(lbIdRespons.Text));
+                        Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, IdResponsavel);
                     }
                     else
                     {
-                        Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, Convert.ToInt32(lbIdRespons.Text));
+                        Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, IdResponsavel);
                     }
                 }
                 else
@@ -60,6 +59,7 @@ namespace Cadastro_Moradores_Condominio
 
         private void frmCadastro_Visitantes_Load(object sender, EventArgs e)
         {
+            lbIdRespons.Text = Convert.ToString(IdResponsavel);
             if (ID2 > 0)
             {
                 btSalvar.Text = "Atualizar";

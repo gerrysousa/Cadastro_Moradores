@@ -63,6 +63,7 @@ namespace Cadastro_Moradores_Condominio.Formulários
 
         private void frmCadastro_Dependentes_Load(object sender, EventArgs e)
         {
+            lbIdRespons.Text = Convert.ToString(IdResponsavel);
             if (ID2 > 0)
             {
                 btSalvar.Text = "Atualizar";
@@ -84,14 +85,15 @@ namespace Cadastro_Moradores_Condominio.Formulários
             {
                 if (!String.IsNullOrEmpty(txtNome.Text))//&& !String.IsNullOrEmpty(txtID.Text))
                 {
-                    lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Dependente.IDTeste);
+                    //lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Dependente.IDTeste);
                     if (ID2 == 0)
                     {  //( pID,  pNome,  pPredio,  pBloco,  pEmail,  pRg,  pTelefoneResidencial,  pTelefoneComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
-                        Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, Convert.ToInt32(lbIdRespons.Text));
+                        Gravar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, IdResponsavel);
                     }
                     else
                     {
-                        Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, Convert.ToInt32(lbIdRespons.Text));
+                        //Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, Convert.ToInt32(lbIdRespons.Text));
+                        Atualizar(Convert.ToInt32(txtID.Text), txtNome.Text, cbParentesco.Text, txtTelefone.Text, IdResponsavel);
                     }
                 }
                 else

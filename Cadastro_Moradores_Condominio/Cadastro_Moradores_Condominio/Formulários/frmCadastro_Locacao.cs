@@ -79,7 +79,7 @@ namespace Cadastro_Moradores_Condominio
                 else
                 {
                     string strUnidadeAlocada = string.Empty;
-                    lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Locacao.IDTeste);
+                    //lbIdRespons.Text = Convert.ToString(Cadastro_Moradores_Condominio.Locacao.IDTeste);
                     if (rbSim.Checked)
                     {
                         strUnidadeAlocada = "Sim";
@@ -95,11 +95,11 @@ namespace Cadastro_Moradores_Condominio
                      {*/
                     if (SalvarOuEditar == 1)
                     {
-                        Gravar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, Convert.ToInt32(lbIdRespons.Text));
+                        Gravar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, IdResponsavel);
                     }
                     else
                     {
-                        Atualizar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, Convert.ToInt32(lbIdRespons.Text));
+                        Atualizar(strUnidadeAlocada, txtNomeProprietario.Text, txtFoneProprietario.Text, txtImobiliaria.Text, txtFoneImobiliaria.Text, IdResponsavel);
                     }
                     //(string pUnidadeAlocada, string pNomeProprietario, string pFoneProprietario, string pNomeImobiliaria, string pFoneImobiliaria, int pIdResponsavel)
 
@@ -123,7 +123,8 @@ namespace Cadastro_Moradores_Condominio
             txtFoneProprietario.Text = objLocacao.foneProprietario;
             txtImobiliaria.Text = objLocacao.nomeImobiliaria;
             txtNomeProprietario.Text = objLocacao.nomeProprietario;
-            lbIdRespons.Text = Convert.ToString(objLocacao.IDResponsavel);
+           // lbIdRespons.Text = Convert.ToString(objLocacao.IDResponsavel);
+            lbIdRespons.Text = Convert.ToString(IdResponsavel);
 
             if (txtNomeProprietario.Text=="")
             {

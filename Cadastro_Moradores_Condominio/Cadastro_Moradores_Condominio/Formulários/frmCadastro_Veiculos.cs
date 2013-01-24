@@ -70,6 +70,7 @@ namespace Cadastro_Moradores_Condominio
 
         private void frmCadastroVeiculos_Load(object sender, EventArgs e)
         {
+            lbIdProprietario.Text = Convert.ToString(IdProprietario);
             if (ID2 > 0)
             {
                 btSalvar.Text = "Atualizar";
@@ -94,14 +95,14 @@ namespace Cadastro_Moradores_Condominio
             {
                 if (!String.IsNullOrEmpty(txtVeiculo.Text))//&& !String.IsNullOrEmpty(txtID.Text))
                 {
-                    lbIdProprietario.Text = Convert.ToString(Cadastro_Moradores_Condominio.Veiculo.IDTeste);//IdProprietario
+                    //lbIdProprietario.Text = Convert.ToString(Cadastro_Moradores_Condominio.Veiculo.IDTeste);//IdProprietario
                     if (ID2 == 0)
                     {  //( pID,  pVeiculo, Ca pPredio,  pBloco,  pEmail,  pRg,  pModeloResidencial,  pModeloComercial,  pCelular1,  pCelular2,  pCpf,  pApartamento,  pIDRespn)                 
-                        Gravar(Convert.ToInt32(txtID.Text), txtVeiculo.Text, txtMarca.Text, txtModelo.Text, txtCor.Text, txtPlaca.Text, txtAno.Text, Convert.ToInt32(lbIdProprietario.Text));
+                        Gravar(Convert.ToInt32(txtID.Text), txtVeiculo.Text, txtMarca.Text, txtModelo.Text, txtCor.Text, txtPlaca.Text, txtAno.Text, IdProprietario);
                     }
                     else
                     {
-                        Atualizar(Convert.ToInt32(txtID.Text), txtVeiculo.Text, txtMarca.Text, txtModelo.Text, txtCor.Text, txtPlaca.Text, txtAno.Text, Convert.ToInt32(lbIdProprietario.Text));
+                        Atualizar(Convert.ToInt32(txtID.Text), txtVeiculo.Text, txtMarca.Text, txtModelo.Text, txtCor.Text, txtPlaca.Text, txtAno.Text, IdProprietario);
                     }
                 }
                 else
